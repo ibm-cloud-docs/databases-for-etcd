@@ -27,12 +27,6 @@ lastupdated: "2018-10-11"
 
 - Backups are included in the service. {{site.data.keyword.databases-for-etcd}} backups reside in the same cloud storage location as the database service itself, and so are also encrypted.
 - All {{site.data.keyword.databases-for-etcd}} deployments are configured with replication, so the data exists with multiple copies and each copy resides on a different cluster and host. Where available, those clusters are also spread in different availability zones within the region where the service is deployed.
- 
-## SOC 2 Type 1 Certification
-
-{{site.data.keyword.IBM_notm}} provides a Service Organization Controls (SOC) 2 Type 1 report for {{site.data.keyword.databases-for-etcd}}. The reports evaluate IBM's operational controls according to the criteria set by the American Institute of Certified Public Accountants (AICPA) Trust Services Principles. The Trust Services Principles define adequate control systems and establish industry standards for service providers such as IBM Cloud to safeguard their customers' data and information.
-
-You can request an SOC 2 Type 1 report from the customer portal or contact your sales representative. Alternatively, you can open a support ticket with [IBM Cloud support](https://www.ibm.com/cloud/support){:new_window} 
 
 ## General Data Protection Regulation (GDPR) 
 
@@ -42,10 +36,6 @@ If you have an account with IBM Cloud, your personal data is held by {{site.data
 {{site.data.keyword.databases-for-etcd}} processes limited client Personal Information (PI) in the course of running the service and optimizing the user experience. 
 
 {{site.data.keyword.databases-for-etcd}} provides a [Data Sheet Addendum (DSA)](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=5EE00B106DCB11E8A0B560E89C071ECC){:new_window} with its policies as a Data Processor regarding content and data protection. 
-
-## HIPAA
-
-{{site.data.keyword.databases-for-etcd}} meets the required {{site.data.keyword.IBM_notm}} controls that are commensurate with the Health Insurance Portability and Accountability Act of 1996 (HIPAA) Security and Privacy Rule requirements. These requirements include the appropriate administrative, physical, and technical safeguards required of Business Associates in 45 CFR Part 160 and Subparts A and C of Part 164. HIPAA must be requested at the time of provisioning and requires a representative to sign a Business Associate Addendum (BAA) agreement with {{site.data.keyword.IBM_notm}}.
 
 ## Terms
 
