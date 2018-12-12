@@ -42,8 +42,8 @@ The sample app in the [Getting Started](./getting-started.html) tutorial provide
 
 If your application is running on Cloud Foundry, you need to create an alias for your {{site.data.keyword.databases-for-etcd}} service so that it is discoverable by the Cloud Foundry application. Log in to the {{site.data.keyword.cloud_notm}} CLI and use the command:
 
-`ibmcloud resource service-alias alias-name --instance-name instance-name`
+`ibmcloud resource service-alias-create alias-name --instance-name instance-name`
 
 The alias name can be the same as the database service instance name. So, for a {{site.data.keyword.databases-for-etcd}} service named "example-etcd", use the following command:
 
-`ibmcloud resource service-alias example-etcd --instance-name example-etcd`
+`ibmcloud resource service-alias-create example-etcd --instance-name example-etcd`
