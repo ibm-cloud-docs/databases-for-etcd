@@ -13,10 +13,10 @@ lastupdated: "2018-11-27"
 
 
 # Getting started tutorial
-This tutorial uses a sample app (coming soon) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.databases-for-etcd_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
+This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-etcd-helloworld-nodejs) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.databases-for-etcd_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
 {: shortdesc}
 
-If you have already created your deployment and just want to connect to your etcd databases, you can skip to [getting your connection strings](https://console.bluemix.net/docs/services/databases-for-etcd/howto-getting-connection-strings.html) and [connecting with `etcdctl`](https://console.bluemix.net/docs/services/databases-for-etcd/connecting-cli-client.html).
+If you have already created your deployment and just want to connect to your etcd databases, you can skip to [getting your connection strings](https://cloud.ibm.com/docs/services/databases-for-etcd/howto-getting-connection-strings.html) and [connecting with `etcdctl`](https://cloud.ibm.com/docs/services/databases-for-etcd/connecting-cli-client.html).
 {: .tip}
 
 ## Before you begin
@@ -28,7 +28,7 @@ You also need to install [Node.js](https://nodejs.org/) and [Git](https://git-sc
 ## Step 1. Create a {{site.data.keyword.databases-for-etcd}} service instance
 {: #create-service}
 
-You can create a {{site.data.keyword.databases-for-etcd}} service from the [{{site.data.keyword.databases-for-etcd}} page](https://console.{DomainName}/catalog/services/databases-for-etcd/) in the {{site.data.keyword.cloud_notm}} catalog.
+You can create a {{site.data.keyword.databases-for-etcd}} service from the [{{site.data.keyword.databases-for-etcd}} page](https://cloud.ibm.com/catalog/services/databases-for-etcd/) in the {{site.data.keyword.cloud_notm}} catalog.
 
 Choose a service name, region, organization and space to provision the service in, and for the **Select a database version** field, choose _Latest Preferred Version_. In this example, the service name is "example-etcd".
 
@@ -63,7 +63,7 @@ Use npm to install dependencies.
 
 ## Step 4. Download and install the {{site.data.keyword.cloud_notm}} CLI tool
 
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
+The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://cloud.ibm.com/docs/cli/reference/bluemix_cli/download_cli.html).
 
 ## Step 5. Connect to {{site.data.keyword.cloud_notm}}
 
@@ -73,7 +73,7 @@ The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate wit
   ibmcloud login
   ```
 
-  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [Logging in with a federated ID](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
+  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [Logging in with a federated ID](https://cloud.ibm.com/docs/cli/login_federated_id.html#federated_id) to learn more.
   {: .tip}
 
 2. Make sure that you are targeting the correct {{site.data.keyword.cloud_notm}} org and space.
@@ -171,7 +171,7 @@ npm start
 
 The app is now running at http://localhost:8080. You can add words and definitions to your {{site.data.keyword.databases-for-etcd}} database. When you stop and restart the app, any words you added are displayed when you refresh the page.
 
-For more information about the credentials you created for the application to connect to your service, see [Using Service Credentials](https://console.bluemix.net/docs/services/databases-for-etcd/connecting-external.html#using-service-credentials).
+For more information about the credentials you created for the application to connect to your service, see [Using Service Credentials](https://cloud.ibm.com/docs/services/databases-for-etcd/connecting-external.html#using-service-credentials).
 
 ## Next steps
 
@@ -179,9 +179,9 @@ To understand more about how the [sample app](https://github.com/IBM-Cloud/cloud
 
 To start exploring your {{site.data.keyword.databases-for-etcd}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](https://console.bluemix.net/docs/services/databases-for-etcd/dashboard-overview.html)
-- [Backups](https://console.bluemix.net/docs/services/databases-for-etcd/dashboard-backups.html)
-- [Settings](https://console.bluemix.net/docs/services/databases-for-etcd/dashboard-settings.html)
+- [Dashboard Overview](https://cloud.ibm.com/docs/services/databases-for-etcd/dashboard-overview.html)
+- [Backups](https://cloud.ibm.com/docs/services/databases-for-etcd/dashboard-backups.html)
+- [Settings](https://cloud.ibm.com/docs/services/databases-for-etcd/dashboard-settings.html)
 
 
 [ibm_cloud_signup_url]: https://ibm.biz/databases-for-etcd-signup
