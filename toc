@@ -35,4 +35,5 @@ Databases For etcd
 	reference-access-management.md
 	reference-activity-tracker.md
 	reference-key-protect.md
+	reference-monitoring.md
 	{: .navgroup-end}

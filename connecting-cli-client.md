@@ -13,6 +13,7 @@ lastupdated: "2018-11-08"
 
 
 # Connecting with `etcdctl`
+{: #connecting-etcdctl}
 
 You can access your etcd database directly from a command-line client, which allows for direct interaction and monitoring of the data structures that are created within the database. It is also useful for administering and monitoring the keyspace and performance, making etcd transactions, managing leases, and other management activities.
 
@@ -20,7 +21,7 @@ You can access your etcd database directly from a command-line client, which all
 
 The `etcdctl` binary is available in the etcd distribution, which can be downloaded from [the coreos/etcd repository](https://github.com/coreos/etcd/releases/latest).
 
-## Connecting with `etcdctl`
+## Connecting
 
 The information `etcdctl` needs to make a connection to your deployment is in the "cli" section of your [connection strings](./howto-getting-connection-strings.html). The table contains a breakdown for reference.
 
