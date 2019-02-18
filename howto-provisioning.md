@@ -13,6 +13,7 @@ lastupdated: "2019-01-03"
 {:tip: .tip}
 
 # Provisioning {{site.data.keyword.databases-for-etcd}}
+{: #provisioning}
 
 To create an {{site.data.keyword.databases-for-etcd_full}} deployment, you need to create an {{site.data.keyword.cloud}} service instance. A service instance can represent different types of service. The service type is determined by the service ID and you need to specify the appropriate service ID when you create a new service instance. The service ID for {{site.data.keyword.databases-for-etcd}} is `databases_for_etcd`.
 
@@ -24,13 +25,13 @@ You can create a {{site.data.keyword.databases-for-etcd}} service from the [{{si
 
 When you create the deployment from the catalog, you need to specify the following parameters.
 
-1. **The service name** - The name can be any string and is the name that is used on the web and in the command-line to identify the new database deployment.
+1. **The service name** - The name can be any string and is the name that is used on the web and in the command line to identify the new database deployment.
 2. **The region** - The region in which the database deployment resides.
 3. **The database version** - The major version of the database to be created within the deployment. The latest minor version is always be used automatically. 
 
 Users can optionally set:
 
-1. **The resource group** - If you are organizing your services into [resource groups](/docs/resources/bestpractice_rgs.html#bp_resourcegroups), you can specify the resource group in this field. Otherwise, you can leave it at default.
+1. **The resource group** - If you are organizing your services into [resource groups](/docs/resources?topic=resources-bp_resourcegroups), you can specify the resource group in this field. Otherwise, you can leave it at default.
 2. **Disk encryption** - Optionally, a Key Protect instance can be selected if the user has Key Protect configured. If it is configured, once the service is selected, a disk encryption key can be selected from the Key Protect service. By default, Key Protect is not used and the deployment automatically creates and manages its own disk encryption key. 
 3. **Initial resource allocation** - Specify initial memory and disk sizes for your databases. The minimum sizes of memory and disk are selected by default.
 
@@ -38,9 +39,9 @@ Once you select the appropriate settings, click **Create** to start the provisio
 
 The database takes some time to deploy, and you are navigated back to your {{site.data.keyword.cloud_notm}} Resource List.
 
-## Using the command-line
+## Using the command line
 
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command-line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
+The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install_use).
 
 To create a {{site.data.keyword.databases-for-etcd}} deployment, you use the CLI to request a service instance with a `databases-for-etcd` service ID.
 
@@ -50,7 +51,7 @@ The command template is:
 ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region>
 ```
 
-More information about this command, in general, is available in the [CLI reference for resource groups](/docs/cli/reference/ibmcloud/cli_resource_group.html#ibmcloud_resource_service_instance_create).
+More information about this command, in general, is available in the [CLI reference for resource groups](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_resource_service_instance_create).
 
 In the specific case of creating a {{site.data.keyword.databases-for-etcd}} deployment, set the service name (quote any name with spaces in it). Then, set `databases-for-etcd` as the service ID. Enter `standard` for the service plan ID and `us-south` (or your region) for the region.
 
@@ -85,7 +86,7 @@ ibmcloud resource service-instance-create example-etcd databases-for-etcd standa
 You can provision new deployments by using the Resource Controller API. However, in order to use the Resource Controller API, you need some additional preparation.
 
 1. [Obtain an IAM token from your API token](https://{DomainName}/apidocs/resource-controller#authentication).
-2. You need to know the ID of the resource group that you would like to deploy to. This information is available through the [{{site.data.keyword.cloud_notm}} CLI](https://{DomainName}/docs/cli/reference/ibmcloud/cli_resource_group.html#ibmcloud_resource_groups). You can find a list of resource groups with `ibmcloud resource groups` and the ID of a resource group with `ibmcloud resource group`. 
+2. You need to know the ID of the resource group that you would like to deploy to. This information is available through the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_resource_groups). You can find a list of resource groups with `ibmcloud resource groups` and the ID of a resource group with `ibmcloud resource group`. 
 3. You need to know the region that you would like to deploy to.
 
 Once you have all the information, the create request is a `POST` to the `https://resource-controller.bluemix.net/v2/resource_instances` endpoint.

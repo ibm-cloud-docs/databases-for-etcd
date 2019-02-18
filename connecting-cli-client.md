@@ -23,7 +23,7 @@ The `etcdctl` binary is available in the etcd distribution, which can be downloa
 
 ## Connecting
 
-The information `etcdctl` needs to make a connection to your deployment is in the "cli" section of your [connection strings](./howto-getting-connection-strings.html). The table contains a breakdown for reference.
+The information `etcdctl` needs to make a connection to your deployment is in the "cli" section of your [connection strings](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings). The table contains a breakdown for reference.
 
 Field Name|Index|Description
 ----------|-----|-----------
@@ -44,12 +44,12 @@ Field Name|Index|Description
 ETCDCTL_API=3 etcdctl --endpoints=http://afe6f1d5-60d5-447e-a96a-66f555ecc277.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32207 --user=ibm_cloud_4417:32f81b04e1b756f34bda351d59c973 member list -w table
 ```
 
-* `ETCDCTL_API=3` : Sets the API version environment variable for the `etcdctl` command. The binary for `etcdctl` supports both version 2 and 3 of the API. By default, it uses version 2. Setting this environment variable overrides the default. If you are only using `etcdctl` to talk to etcd v3 deployments, you might want to set this variable more permanently in your shell environment.
-* `etcdctl` : The command itself. 
-* `--endpoints=...` : The parameter that specifies the endpoints where the `etcdctl` command connects. It's composed of HTTPS protocol URLs and includes a port number. 
-* `--user=...` : The parameter for the username and password, separated by a colon, to be used as credentials to log in to the etcd deployment. 
-* `member list` : An etcdctl command to list the database members of the etcd deployment. Without any other parameters, the result is produced as a list comma separated values.
-* `-w table` : A modifier for the output of `member list`, which reformats it as a table with headings.
+* `ETCDCTL_API=3` - Sets the API version environment variable for the `etcdctl` command. The binary for `etcdctl` supports both version 2 and 3 of the API. By default, it uses version 2. Setting this environment variable overrides the default. If you are only using `etcdctl` to talk to etcd v3 deployments, you might want to set this variable more permanently in your shell environment.
+* `etcdctl` - The command itself. 
+* `--endpoints=...` - The parameter that specifies the endpoints where the `etcdctl` command connects. It's composed of HTTPS protocol URLs and includes a port number. 
+* `--user=...` - The parameter for the username and password, separated by a colon, to be used as credentials to log in to the etcd deployment. 
+* `member list` - An etcdctl command to list the database members of the etcd deployment. Without any other parameters, the result is produced as a list comma separated values.
+* `-w table` - A modifier for the output of `member list`, which reformats it as a table with headings.
 
 ## Starting `etcdctl` from the IBM Cloud CLI
 

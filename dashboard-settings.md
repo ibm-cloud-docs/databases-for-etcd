@@ -13,6 +13,7 @@ lastupdated: "2018-10-17"
 {:tip: .tip}
 
 # Settings
+{: #dashboard-settings}
 
 Manage your {{site.data.keyword.databases-for-etcd_full}} service through these available settings.
 

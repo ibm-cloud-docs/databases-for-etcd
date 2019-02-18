@@ -12,11 +12,13 @@ lastupdated: "2018-11-27"
 {:tip: .tip}
 
 
-# Getting started tutorial
+# Getting Started
+{: #getting-started}
+
 This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-etcd-helloworld-nodejs) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.databases-for-etcd_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
 {: shortdesc}
 
-If you have already created your deployment and just want to connect to your etcd databases, you can skip to [getting your connection strings](https://cloud.ibm.com/docs/services/databases-for-etcd/howto-getting-connection-strings.html) and [connecting with `etcdctl`](https://cloud.ibm.com/docs/services/databases-for-etcd/connecting-cli-client.html).
+If you have already created your deployment and just want to connect to your etcd databases, you can skip to [getting your connection strings](/docs/services/databases-for-etcd?topic=databses-for-etcd-connection-strings) and [connecting with `etcdctl`](/docs/services/databases-for-etcd?topic=connecting-etcdctl).
 {: .tip}
 
 ## Before you begin
@@ -63,7 +65,7 @@ Use npm to install dependencies.
 
 ## Step 4. Download and install the {{site.data.keyword.cloud_notm}} CLI tool
 
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://cloud.ibm.com/docs/cli/reference/bluemix_cli/download_cli.html).
+The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install_use).
 
 ## Step 5. Connect to {{site.data.keyword.cloud_notm}}
 
@@ -73,7 +75,7 @@ The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate wit
   ibmcloud login
   ```
 
-  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [Logging in with a federated ID](https://cloud.ibm.com/docs/cli/login_federated_id.html#federated_id) to learn more.
+  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/iam?topic=iam-federated_id)) to learn more.
   {: .tip}
 
 2. Make sure that you are targeting the correct {{site.data.keyword.cloud_notm}} org and space.
@@ -171,7 +173,7 @@ npm start
 
 The app is now running at http://localhost:8080. You can add words and definitions to your {{site.data.keyword.databases-for-etcd}} database. When you stop and restart the app, any words you added are displayed when you refresh the page.
 
-For more information about the credentials you created for the application to connect to your service, see [Using Service Credentials](https://cloud.ibm.com/docs/services/databases-for-etcd/connecting-external.html#using-service-credentials).
+For more information about the credentials you created for the application to connect to your service, see [Using Service Credentials](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#connection-string-breakdown).
 
 ## Next steps
 
@@ -179,9 +181,9 @@ To understand more about how the [sample app](https://github.com/IBM-Cloud/cloud
 
 To start exploring your {{site.data.keyword.databases-for-etcd}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](https://cloud.ibm.com/docs/services/databases-for-etcd/dashboard-overview.html)
-- [Backups](https://cloud.ibm.com/docs/services/databases-for-etcd/dashboard-backups.html)
-- [Settings](https://cloud.ibm.com/docs/services/databases-for-etcd/dashboard-settings.html)
+- [Dashboard Overview](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-overview)
+- [Backups](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-backups)
+- [Settings](/docs/services/databases-for-etcd?topic=databses-for-etc-dashboard-settings)
 
 
 [ibm_cloud_signup_url]: https://ibm.biz/databases-for-etcd-signup

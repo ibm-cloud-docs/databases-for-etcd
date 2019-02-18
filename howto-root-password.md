@@ -12,6 +12,7 @@ lastupdated: "2018-11-08"
 {:tip: .tip}
 
 # Setting the Root Password
+{: #root-password}
 
 The {{site.data.keyword.databases-for-etcd_full}} service is provisioned with a root user.
 

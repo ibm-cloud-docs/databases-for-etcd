@@ -7,6 +7,9 @@ Databases For etcd
 	{: .navgroup id="learn"}
 	index.md
 	getting-started.md
+	high-availability.md
+	security-compliance.md
+	versions.md
 
 	{: .topicgroup}
 	The Service Dashboard
@@ -19,19 +22,17 @@ Databases For etcd
 	howto-provisioning.md
 	howto-getting-connection-strings.md
 	howto-root-password.md
-	howto-using-ibmcloud-cli.md
 
 	{: .topicgroup}
-	Connecting to Databases for ectd
+	Connecting to Databases for etcd
 		connecting-ibmcloud-app.md
 		connecting-external.md
 		connecting-cli-client.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
-	reference-security.md
-	reference-versions.md
-	reference-architecture.md
+	[Cloud Databases CLI plugin](/databases-cli-plugin/cloud-databases-cli-cdb-reference)
+	[Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api)	
 	reference-access-management.md
 	reference-activity-tracker.md
 	reference-key-protect.md

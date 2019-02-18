@@ -12,7 +12,7 @@ lastupdated: "2018-10-11"
 {:pre: .pre}
 
 # Backups
-{: #backups}
+{: #dashboard-backups}
 
 {{site.data.keyword.databases-for-etcd_full}} backups are accessible from the _Backups_ tab of your service dashboard. Daily and on-demand backups are available for 30 days. Each backup is labeled with its type, and when the backup was taken. Click the backup to expand the options for any available backup.
 
@@ -21,7 +21,7 @@ lastupdated: "2018-10-11"
 Restoring a backup provisions a new service instance with the data from the backup.
 
 1. Click in the corresponding row to expand the options for the backup you want to restore.
-2. Click the **Restore** button.  A message is displayed that a restore from backup has started. Clicking on **Your new instance is available now.** will take you to your _Resources List_.
+2. Click the **Restore** button.  A message is displayed that a restore from backup has started. Clicking **Your new instance is available now.** takes you to your _Resources List_.
 
 The new service instance is automatically named "etcd-restore-[timestamp]", and appears on your {{site.data.keyword.cloud_notm}} dashboard when provisioning starts.
 
@@ -62,7 +62,7 @@ The response has the backup `ID`, the `Deployment ID`, `Type`, `Created At`, `St
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. Use it with the `/backups` endpoint if you need to manage or automate backups programmatically.
 
-For more information and examples, see the [API Reference](https://{DomianName}/apidocs/cloud-databases-api#get-information-about-a-backup).
+For more information and examples, see the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#get-information-about-a-backup).
 
 ## Backups and Restoration
 
