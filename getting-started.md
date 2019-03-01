@@ -109,15 +109,16 @@ The alias name can be the same as the database service instance name. For exampl
   applications:
   - name:    example-helloworld-nodejs
     routes:
-    - route: example-helloworld-nodejs.mybluemix.net
+    - route: example-helloworld-nodejs.us-south.cf.appdomain.cloud
     memory:  128M
     services:
       - example-etcd
   ```
 
-2. Change the `route` value to something unique. The route that you choose determines the subdomain of your application's URL:  `<route>.mybluemix.net`.
+2. Change the route value to something unique. The route that you choose determines the subdomain of your application's URL. The format is `<route>.{region}.cf.appdomain.cloud`. Be sure the `{region}` matches where your application is deployed.
 3. Change the `name` value. The name that you choose is displayed in your {{site.data.keyword.cloud_notm}} dashboard.
 4. Update the `services` value to match the alias of the service you created in [Create a Cloud Foundry alias for the database service](#create-alias).
+
 ## Step 8. Push the app to {{site.data.keyword.cloud_notm}}.
 
 This step fails if the service is not finished provisioning from Step 1. You can check its progress on your {{site.data.keyword.cloud_notm}} _Dashboard_.
@@ -138,7 +139,7 @@ If your application is not listed, repeat Steps 7 and 8, making sure that you en
 
 ## Step 10. Use the app
 
-Now, when you visit `<route>.mybluemix.net/` you can see the contents of your {{site.data.keyword.databases-for-etcd}} collection. As you add words and their definitions, they are added to the database and displayed. If you stop and restart the app, you see any words and definitions that were already added are now listed.
+Now, when you visit `<route>.{region}.cf.appdomain.cloud/` you can see the contents of your {{site.data.keyword.databases-for-etcd}} collection. As you add words and their definitions, they are added to the database and displayed. If you stop and restart the app, you see any words and definitions that were already added are now listed.
 
 ## Running the app locally
 
