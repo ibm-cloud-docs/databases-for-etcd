@@ -3,6 +3,9 @@
 Copyright:
   years: 2019
 lastupdated: "2019-01-16"
+
+subcollection: databases-for-etcd
+
 ---
 
 {:new_window: target="_blank"}

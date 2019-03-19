@@ -2,6 +2,9 @@
 copyright:
   years: 2018
 lastupdated: "2018-10-11"
+
+subcollection: databases-for-etcd
+
 ---
 
 {:shortdesc: .shortdesc}

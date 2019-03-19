@@ -2,6 +2,9 @@
 copyright:
   years: 2017,2018
 lastupdated: "2018-11-08"
+
+subcollection: databases-for-etcd
+
 ---
 
 {:new_window: target="_blank"}
