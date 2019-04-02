@@ -35,6 +35,7 @@ Databases For etcd
 	[Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api)	
 	reference-access-management.md
 	reference-activity-tracker.md
+	reference-logging.md
 	reference-key-protect.md
 	reference-monitoring.md
 	{: .navgroup-end}

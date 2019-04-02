@@ -54,3 +54,6 @@ Action|Description
 `databases-for-etcd.whitelisted-ips-list.update`|The whitelist was modified. A "-failure" flag is included in the message if the attempt to modify the whitelist failed.
 {: caption="Table 1. List of Events and Event Descriptions" caption-side="top"}
 
+## Internal Event Tracking Retention
+
+Events for all {{site.data.keyword.databases-for}} deployments are kept internally for 30 days and then purged. If you are using {{site.data.keyword.la_full_notm}} and your plan is for a shorter period, events will only be accessible by you for the length of your plan. Regardless of the plan that you choose, all {{site.data.keyword.databases-for}} events are deleted after 30 days.
