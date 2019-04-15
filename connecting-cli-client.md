@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017,2018
-lastupdated: "2018-11-08"
+  years: 2018,2019
+lastupdated: "2019-04-10"
 
 subcollection: databases-for-etcd
 
@@ -25,6 +25,8 @@ You can access your etcd database directly from a command-line client, which all
 The `etcdctl` binary is available in the etcd distribution, which can be downloaded from [the coreos/etcd repository](https://github.com/coreos/etcd/releases/latest).
 
 ## Connecting
+
+Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
 The information `etcdctl` needs to make a connection to your deployment is in the "cli" section of your [connection strings](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings). The table contains a breakdown for reference.
 
