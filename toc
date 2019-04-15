@@ -34,6 +34,7 @@ Databases For etcd
 	[Cloud Databases CLI plugin](/databases-cli-plugin/cloud-databases-cli-cdb-reference)
 	[Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api)	
 	reference-access-management.md
+	reference-service-endpoints.md
 	reference-activity-tracker.md
 	reference-logging.md
 	reference-key-protect.md
