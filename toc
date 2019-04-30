@@ -9,34 +9,35 @@ Databases For etcd
 	getting-started.md
 	high-availability.md
 	security-compliance.md
-	versions.md
-
-	{: .topicgroup}
-	The Service Dashboard
-		dashboard-overview.md
-		dashboard-settings.md
-		dashboard-backups.md
+	/cloud-databases/cloud-databases-versioning-policy
+	dashboard-overview.md
+	/cloud-databases/cloud-databases-tutorial-k8s-app
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
-	howto-provisioning.md
-	howto-getting-connection-strings.md
+	/cloud-databases/cloud-databases-provisioning
 	howto-root-password.md
+	howto-getting-connection-strings.md
 
 	{: .topicgroup}
 	Connecting to Databases for etcd
 		connecting-ibmcloud-app.md
 		connecting-external.md
 		connecting-cli-client.md
+	
+	howto-user-management.md
+	howto-resources-scaling.md
+	howto-backups.md
+	/cloud-databases/cloud-databases-whitelisting
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
 	[Cloud Databases CLI plugin](/databases-cli-plugin/cloud-databases-cli-cdb-reference)
-	[Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api)	
-	reference-access-management.md
-	reference-service-endpoints.md
+	[Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api)
+	/cloud-databases/cloud-databases-iam
+	/cloud-databases/cloud-databases-service-endpoints
 	reference-activity-tracker.md
-	reference-logging.md
-	reference-key-protect.md
+	/cloud-databases/cloud-databases-logging
 	reference-monitoring.md
+	/cloud-databases/cloud-databases-key-protect
 	{: .navgroup-end}

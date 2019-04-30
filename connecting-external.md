@@ -18,19 +18,14 @@ subcollection: databases-for-etcd
 
 Your applications and drivers use connection strings to make a connection to {{site.data.keyword.databases-for-etcd_full}}. Each deployment has connection strings specifically for drivers and applications. Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
-The connection strings can be used by any of the credentials you have created on your deployment. While you can use the admin user for all of your connections and applications, it might be better to generate credentials specifically for your applications to connect with. Documentation on generating credentials is on the [Getting Credentials and Connection Strings](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings) page.
+The connection strings can be used by any of the credentials for your deployment. While you can use the root user for all of your connections and applications, it might be better to generate credentials specifically for your applications to connect with. Documentation on generating credentials is on the [Getting Credentials and Connection Strings](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings) page.
 
-## Getting connection strings
+## Using Connection Information
 
-The easiest way to get connection strings for an application is to create a set of _Service Credentials_ specifically for your application to connect with. Doing so also returns all the connection information as a JSON object in a click-to-copy field.
+{{site.data.keyword.databases-for-etcd}} only supports the etcd v3 API and datastore. Access to the v2 API is disabled. 
+{: .tip}
 
-Alternatively, the {{site.data.keyword.cloud_notm}} CLI [cloud databases plug-in](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference) supports generating users and connection strings, as does the [{{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API](https://{DomainName}/apidocs/cloud-databases-api#creates-a-database-level-user).
-
-Full documentation on generating and retrieving connection strings is on the [Getting Connection Strings](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings) page.
-
-## Connecting with a language's driver
-
-The information a driver needs to make a connection to your deployment is in the "etcd" section of your connection strings. The table contains a breakdown for reference.
+The information an application needs to make a connection to your deployment is in the "etcd" section of your connection strings. The table contains a breakdown for reference.
 
 Field Name|Index|Description
 ----------|-----|-----------
@@ -48,9 +43,11 @@ Field Name|Index|Description
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
+## Connecting with a Driver
+
 etcd drivers are often able to make a connection to your deployment when given the URI-formatted connection string found in the "composed" field of the connection information. For example, 
 ```
-http://ibm_cloud_59699685_b95e_4afe_9d39_7464c228563c:$PASSWORD@ca537b4d-dcf2-467f-bd98-97535f11445b.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32218
+https://ibm_cloud_59699685_b95e_4afe_9d39_7464c228563c:$PASSWORD@ca537b4d-dcf2-467f-bd98-97535f11445b.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32218
 ```
 
 The table covers a few of the etcd drivers in various languages.
@@ -63,9 +60,19 @@ Java|`etcd-java`|[Link](https://github.com/IBM/etcd-java)
 Go|`etcd/client`|[Link](https://github.com/etcd-io/etcd/tree/master/client)
 {: caption="Table 2. Common etcd drivers" caption-side="top"}
 
-## Driver TLS and self-signed certificate support
+## Connecting without a Driver
 
-All connections to {{site.data.keyword.databases-for-etcd}} are TLS 1.2 enabled, so the driver you use to connect needs to be able to support encryption. Your deployment also comes with a self-signed certificate so the driver can verify the server upon connection. 
+For languages that do not have gRPC support etcd v3 provides a JSON gRPC gateway that translates HTTP/JSON requests into gRPC messages. For example, you can check the cluster health by using cURL.
+```
+curl https://35dae549-2275-4d3e-beed-d86f36022336.974550db55eb4ec0983f023940bf637f.databases.appdomain.cloud:32460/{version}/cluster/member/list --cacert c5f02736-d94c-11e8-a2e9-62ec2ed68f84 \
+-X POST -d '{"name": "ibm_cloud_59699685_b95e_4afe_9d39_7464c228563c", "password": "$PASSWORD"}'
+```
+
+The `version` path parameter depends on the minor version of etcd running on your deployment. You can find the minor version on your [deployment's _Overview_ page](/docs/services/databases-for-etcd?topic=databases-for-etcd-deployment-overview). If you are running etcd 3.2, use `v3alpha` in the endpoint. If you are running etcd 3.3, use `v3beta` in the endpoint. Version information and example commands are in the [etcd documentation](https://github.com/etcd-io/etcd/blob/master/Documentation/dev-guide/api_grpc_gateway.md). Refer to the [etcd Swagger API definitions](https://github.com/etcd-io/etcd/blob/master/Documentation/dev-guide/apispec/swagger/rpc.swagger.json) for a full reference. 
+
+## TLS and self-signed certificate support
+
+All connections to {{site.data.keyword.databases-for-etcd}} are TLS 1.2 enabled, so the method you use to connect needs to be able to support encryption. Your deployment also comes with a self-signed certificate to verify the server upon connection. 
 
 ### Using the self-signed certificate
 
@@ -76,7 +83,7 @@ All connections to {{site.data.keyword.databases-for-etcd}} are TLS 1.2 enabled,
 
 ### CLI plug-in support for the self-signed certificate
 
-You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the driver.
+You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the driver or client.
 
 
 

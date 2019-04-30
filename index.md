@@ -25,7 +25,7 @@ subcollection: databases-for-etcd
 
 {{site.data.keyword.databases-for-etcd}} is an {{site.data.keyword.cloud_notm}} service. Provisioning and account management is handled through your {{site.data.keyword.cloud_notm}} account. If you already have an account, you can provision {{site.data.keyword.databases-for-etcd}} from the [{{site.data.keyword.cloud_notm}} catalog](https://{DomainName}/catalog/services/databases-for-etcd).
 
-For detailed provisioning information, including {{site.data.keyword.cloud_notm}} CLI instructions, see the [Provisioning](/docs/services/databases-for-etcd?topic=databases-for-etcd-provisioning) page.
+For detailed provisioning information, including {{site.data.keyword.cloud_notm}} CLI instructions, see the [Provisioning](/docs/services/databases-for-etcd?topic=cloud-databases-provisioning) page.
 
 If you don't yet have an {{site.data.keyword.cloud_notm}} account, sign up on the [registration](https://{DomainName}/registration/) page.
 
@@ -37,7 +37,7 @@ More information on IAM roles and actions for the {{site.data.keyword.databases-
 
 ## Using {{site.data.keyword.databases-for-etcd}}
 
-{{site.data.keyword.databases-for-etcd}} provides a UI, accessible by selecting _Manage_ from the left sidebar of your service and opening the management panel. You get a quick [Overview](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-overview) of your service as well as configuration settings on the [Settings](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-settings) tab and access to your backups on the [Backups](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-backups) tab.
+{{site.data.keyword.databases-for-etcd}} provides a UI, accessible by selecting _Manage_ from the left sidebar of your service and opening the management panel. You get a quick [Overview](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-overview) of your service as well as configuration settings on the [Settings](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-overview#settings) tab and access to your backups on the [Backups](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-backups) tab.
 
 ### Using the {{site.data.keyword.cloud_notm}} command-line interface
 
@@ -59,8 +59,9 @@ Specific guidance on connecting with etcd drivers is on the [Connecting External
 
 {{site.data.keyword.databases-for-etcd}} deployments offer other cloud services integrations. 
 - View events with [Activity Tracker](/docs/services/databases-for-etcd?topic=databases-for-etcd-activity-tracker)
-- Monitor deployment resource use with the [Monitoring](/docs/services/databases-for-etcd?topic=databases-for-etcd-monitoring) service.
-- BYOK encryption is available if you use [Key Protect](/docs/services/databases-for-etcd?topic=databases-for-etcd-key-protect)
+- Monitor deployment resource use with the [Monitoring](/docs/services/databases-for-etcd?topic=cloud-databases-monitoring) service.
+- BYOK encryption is available if you use [Key Protect](/docs/services/databases-for-etcd?topic=cloud-databases-key-protect)
+- [Service Endpoints Integration](/docs/services/databases-for-etcd?topic=cloud-databases-service-endpoints) allows you to select public or private networking for your deployment at provision
 
 
 

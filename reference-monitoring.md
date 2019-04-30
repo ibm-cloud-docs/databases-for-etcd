@@ -41,7 +41,7 @@ London | London | https://metrics.eu-gb.bluemix.net
 
 Once provisioned, the Monitoring service under **Cloud Foundry Services** in your **Resource List**. You can access your Monitoring Dashboard by opening the service, or by using a direct link. The direct link depends on what region the monitoring service is in.
 
-By default, the monitoring service displays information that is related to services you have set-up under your Domain, Account, Organization, and Space. {{site.data.keyword.databases-for}} deployments send metrics scoped to the Account level. Click on your account in the upper-left and select "account" from the _Domain_ drop-down menu.
+By default, the monitoring service displays information that is related to services you have set-up under your Domain, Account, Organization, and Space. {{site.data.keyword.databases-for}} deployments send metrics that are scoped to the Account level. Click on your account in the upper-left and select "account" from the _Domain_ drop-down menu.
 
 ![IBM Cloud Monitoring Dashboard](images/monitoring-dashboard.png)
 
@@ -61,7 +61,7 @@ Select the service name of the deployment you want to monitor on this graph and 
 
 ![Selecting the service name](images/monitoring-service-name.png)
  
-After the region field is an ID field. The ID that appears corresponds to the last part of your deployment's ID. For example, if your [Deployment ID](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-overview#id) is,
+After the region field is an ID field. The ID corresponds to the last part of your deployment's ID. For example, if your [Deployment ID](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-overview#id) is,
 
 ![Example deployment ID](images/monitoring-crn-example.png)
 then the ID in the field is `ef400bd3-cb95-486e-b54c-18dae5477801`.
@@ -76,7 +76,7 @@ The example graph shows the memory usage for all data members of a deployment.
 
 ![An example graph that shows memory usage for a deployment](images/monitoring-example-graph.png)
 
-Once the is graph configured, click the _Save_ icon and give it a name. It appears in your list of dashboards.
+Once the graph is configured, click the _Save_ icon and give it a name. It appears in your list of dashboards.
 
 ## Configuring Alerts
 
