@@ -27,15 +27,14 @@ A visual representation of your data members and their resource allocation is av
 Billing is based on the _total_ amount of resources that are allocated to the service.
 {: .tip}
 
-**Disk Usage** - 
+**Disk Usage** -
 Storage shows the amount of disk space that is allocated to your service. Each member gets an equal share of the allocated space. Disk allocation affects the performance of the disk, with larger disks having higher performance. Baseline Input-Output Operations per second (IOPS) performance for disk is 10 IOPS for each GB. Due to the etcd [8 GB storage limit](https://github.com/etcd-io/etcd/blob/master/Documentation/dev-guide/limit.md), scaling disk space increases only the the IOPS your deployment can handle.
 
 You cannot scale down storage. You can recover space by backing up and restoring to a new deployment.
 {: .tip} 
 
-**RAM** - 
+**RAM** -
 If you find that your deployment suffers from performance issues due to a lack of memory, you can scale the amount of RAM allocated to your service. The amount of memory you allocate to the deployment is split between the three three members. Adding memory to the total allocation adds memory to the members equally.
-
 
 ## Scaling in the UI
 
@@ -68,7 +67,7 @@ Count   3
 |   Adjustable              true
 ```
 
-The deployment has three members, with 3072 MB of RAM and 15360 MB of disk allocated in total. The "per member" allocation is 1024 MB of RAM and 5120 MB of disk. The minimum value is the lowest the total allocation can be set. The step size is the smallest amount by which the total allocation can be adjusted.
+The deployment has three members, with 3072 MB of RAM and 61440 MB of disk allocated in total. The "per member" allocation is 1024 MB of RAM and 20480 MB of disk. The minimum value is the lowest the total allocation can be set. The step size is the smallest amount by which the total allocation can be adjusted.
 
 The `cdb deployment-groups-set` command allows either the total RAM or total disk allocation to be set, in MB. For example, to scale the memory of the "example-deployment" to 2048 MB of RAM for each memory member (for a total memory of 6144 MB), you use the command:  
 `ibmcloud cdb deployment-groups-set example-deployment member --memory 6144`
@@ -77,4 +76,20 @@ The `cdb deployment-groups-set` command allows either the total RAM or total dis
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. Use it with the `/groups` endpoint if you need to manage or automate scaling programmatically.
 
-You can find more examples in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#get-currently-available-scaling-groups-from-a-depl).
+To view the current and scalable resources on a deployment,
+```
+curl -X GET -H "Authorization: Bearer $APIKEY" `https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/groups'
+```
+
+To scale the memory of a deployment to 2048 MB of RAM for each memory member (for a total memory of 6144 MB).
+```
+curl -X PATCH `https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/groups/member' \
+-H "Authorization: Bearer $APIKEY" \
+-H "Content-Type: application/json" \
+-d '{"memory": {
+        "allocation_mb": 6144
+      }
+    }'
+```
+
+More information is in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#get-currently-available-scaling-groups-from-a-depl).

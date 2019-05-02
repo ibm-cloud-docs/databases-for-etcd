@@ -7,6 +7,7 @@ Databases For etcd
 	{: .navgroup id="learn"}
 	index.md
 	getting-started.md
+	pricing.md
 	high-availability.md
 	security-compliance.md
 	/cloud-databases/cloud-databases-versioning-policy

@@ -19,7 +19,7 @@ subcollection: databases-for-etcd
 
 {{site.data.keyword.databases-for-etcd_full}} is a managed cloud database service that is fully integrated into the {{site.data.keyword.cloud_notm}} ecosystem. The database, storage, and supporting infrastructure all run in {{site.data.keyword.cloud_notm}}.
 
-{{site.data.keyword.databases-for-etcd}} provides replication, fail-over, and high-availability features to protect your databases and data from infrastructure maintenance, upgrades, and failures. Deployments contain a cluster with three nodes. All three nodes store data and maintain cluster state with a quorum. Using a consensus algorithm, etcd monitors cluster health, triggers failovers if one member becomes unhealthy, and to accept a new or rejoining member.  If one data member becomes unreachable, your cluster continues to operate normally. If there is a permanent loss of a quorum, then the cluster is restarted and recovers to a previous state. 
+{{site.data.keyword.databases-for-etcd}} provides replication, fail-over, and high-availability features to protect your databases and data from infrastructure maintenance, upgrades, and failures. Deployments contain a cluster with three nodes. All three nodes store data and maintain cluster state with a quorum. Using a consensus algorithm, etcd monitors cluster health, triggers failovers if one member becomes unhealthy, and to accept a new or rejoining member. If one data member becomes unreachable, your cluster continues to operate normally. If there is a permanent loss of a quorum, then the cluster is restarted and recovers to a previous state. 
 
 ## Application-level High-Availability
 
