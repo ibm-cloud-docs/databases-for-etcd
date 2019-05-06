@@ -15,22 +15,27 @@ subcollection: databases-for-etcd
 {:tip: .tip}
 
 
-# Getting Credentials and Connection Strings
+# Creating Users and Getting Connection Strings
 {: #connection-strings}
 
-In order to connect to {{site.data.keyword.databases-for-etcd_full}}, you need credentials and some connection strings. A {{site.data.keyword.databases-for-etcd}} deployment is provisioned with a root user, and after you[set the root password](/docs/services/databases-for-etcd?topic=databases-for-etcd-root-password), you can use its connection strings to connect to your deployment.
-
-Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Connections_ panel. They can be used with any set of credentials that you generate.
+In order to connect to {{site.data.keyword.databases-for-etcd_full}}, you need some users and connection strings. Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Connections_ panel. 
 
 ![Connections panel on the Dashboard Overview](images/connections_panel.png)
 
-You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections) and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections) and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026). 
 
-## Credentials and Connection Strings for additional users
+A {{site.data.keyword.databases-for-etcd}} deployment is provisioned with a root user, and after you [set the root password](/docs/services/databases-for-etcd?topic=databases-for-etcd-root-password), you can use its connection strings to connect to your deployment.
+{: .tip}
 
-Access to your {{site.data.keyword.databases-for-etcd}} deployment is not just limited to the root user. You can create additional users and retrieve connection strings specific to them by using the _Service Credentials_ panel, the {{site.data.keyword.IBM_notm}} CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
+## Additional Users and Connection Strings
 
-## Generating Connection Strings from _Service Credentials_
+Access to your {{site.data.keyword.databases-for-etcd}} deployment is not limited to the root user. You can create users by using the _Service Credentials_ panel, the {{site.data.keyword.IBM_notm}} CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
+
+All users on your deployment can use the connection strings, including connection strings for either public or private endpoints.
+
+When you create a user, it is assigned certain database roles and privileges. These privileges include the ability to login and read/write access to the entire keyspace . For more information, see the [Managing Users and Roles](/docs/services/databases-for-etcd?topic=databases-for-etcd-user-management) page.
+
+### Creating Users and Getting Connection Strings in _Service Credentials_
 
 1. Navigate to the service dashboard for your service.
 2. Click _Service Credentials_ to open the _Service Credentials_ panel.
@@ -41,26 +46,22 @@ Access to your {{site.data.keyword.databases-for-etcd}} deployment is not just l
 
 The new credentials appear in the table, and the connection strings are available as a JSON object in the click-to-copy field under _View Credentials_.
 
-### Using Service IDs
+#### Using Service IDs
 
 Because {{site.data.keyword.databases-for-etcd}} is an IAM service, you can use [Service IDs](/docs/iam?topic=iam-serviceids) to manage access to this service. For example, by using an IAM-managed Service ID, that user gets an etcd user and connection string in _Service Credentials_, and has API key access to the {{site.data.keyword.cloud_notm}} Databases API.  If you have a Service ID, enter its information under _Select Service ID_.
 
-## Getting Credentials and Connection Strings from the command line
+### Creating Users and Getting Connection Strings from the command line
 
-If you manage your service through the {{site.data.keyword.cloud_notm}} CLI and the cloud databases plug-in, you can generate a new user and connection strings with `cdb user-create`. For example, to create a new user for a deployment named "example-deployment", use the following command.
+If you manage your service through the {{site.data.keyword.cloud_notm}} CLI and the [cloud databases plug-in](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli), you can create a new user with `cdb user-create`. For example, to create a new user for an "example-deployment", use the following command.
 
 `ibmcloud cdb user-create example-deployment <newusername> <newpassword>`
 
-The response contains the task `ID`, `Deployment ID`, `Description`, `Created At`, `Status`, and `Progress Percentage` fields. The `Status` and `Progress Percentage` fields update when the task is complete.
+The response contains the task `ID`, `Deployment ID`, `Description`, `Created At`, `Status`, and `Progress Percentage` fields.  The `Status` and `Progress Percentage` fields update when the task is complete.
 
 Once the task has finished, you can retrieve the new user's connection strings with the `ibmcloud cdb deployment-connections` command.
 
 ```
 ibmcloud cdb deployment-connections example-deployment -u <newusername>
-```
-Or
-```
-ibmcloud cdb cxn example-deployment -u <newusername>
 ```
 
 Full connection information is returned by the `ibmcloud cdb deployment-connections` command with the `--all` flag. To retrieve all the connection information for a deployment named  "example-deployment", use the following command.
@@ -69,12 +70,29 @@ Full connection information is returned by the `ibmcloud cdb deployment-connecti
 ibmcloud cdb deployment-connections example-deployment -u <newusername> --all
 ```
 
-If you don't specify a user, the `deployment-connections` commands return information for the root user by default.
+If you don't specify a user, the `deployment-connections` commands return information for the admin user by default.
 {: .tip}
+
+### Creating Users and Getting Connection Strings from the API
+
+The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. To create and manage users, use the base URL with the `/users` endpoint.
+```
+curl -X POST 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/users' \
+-H "Authorization: Bearer $APIKEY" \
+-H "Content-Type: application/json" \
+-d '{"username":"jane_smith", "password":"newsupersecurepassword"}'
+```
+
+To retrieve user's connection strings, use the base URL with the `/users/{userid}/connections` endpoint. You have to specify in the path which user and which type of endpoint (public or private) should be used in the returned connection strings. The user and endpoint type is not enforced. You can use any user on your deployment with either endpoint (if both exist on your deployment).
+```
+curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v4/ibm/deployments/{id}/users/{userid}/connections/{endpoint_type}'
+```
+
+More information is available in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api).
 
 ### Adding users to _Service Credentials_
 
-Creating a new user from the CLI doesn't automatically populate that user's connection strings into _Service Credentials_. If you want to add them there, you can create a new credential with the existing user information.
+Creating a new user from the CLI or API doesn't automatically populate that user's connection strings into _Service Credentials_. If you want to add them there, you can create a new credential with the existing user information.
 
 Enter the user name and password in the JSON field _Add Inline Configuration Parameters_, or specify a file where the JSON information is stored. For example, `{"existing_credentials":{"username":"Robert","password":"supersecure"}}`.
 
@@ -119,17 +137,3 @@ Field Name|Index|Description
 {: caption="Table 2. `etcdctl`/`cli` connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
-
-
-## Getting Credentials and Connection Strings with the API
-
-The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. To create and manage users, use the base URL with the `/users` endpoint. Examples and documentation are available in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#creates-a-database-level-user).
-
-To retrieve user's connection strings, use the base URL with the `/users/{userid}/connections` endpoint. Examples and documentation are also available in the [API Reference](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
-
-
-
-
-
-
-

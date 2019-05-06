@@ -16,7 +16,7 @@ subcollection: databases-for-etcd
 {:tip: .tip}
 
 
-# Monitoring
+# Monitoring Integration
 {: #monitoring}
 
 Monitoring for {{site.data.keyword.databases-for-etcd_full}} is provided through integration with the {{site.data.keyword.cloud}} Monitoring service. Your deployments forward information about disk space and memory usage so that you can effectively monitor your memory and disk usage. If your deployment outgrows its allocated resources, you can scale up to keep everything running smoothly.

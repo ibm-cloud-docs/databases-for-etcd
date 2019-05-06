@@ -14,7 +14,7 @@ subcollection: databases-for-etcd
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Backups
+# Managing Backups
 {: #dashboard-backups}
 
 {{site.data.keyword.databases-for-etcd_full}} backups are accessible from the _Backups_ tab of your service dashboard. Daily and on-demand backups are available for 30 days. Each backup is labeled with its type, and when the backup was taken. Click the backup to expand the options for any available backup.

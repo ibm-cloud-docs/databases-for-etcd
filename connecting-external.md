@@ -16,9 +16,9 @@ subcollection: databases-for-etcd
 # Connecting an external application
 {: #external-app}
 
-Your applications and drivers use connection strings to make a connection to {{site.data.keyword.databases-for-etcd_full}}. Each deployment has connection strings specifically for drivers and applications. Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+Each {{site.data.keyword.databases-for-etcd_full}} deployment has connection strings specifically for drivers and applications. Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
-The connection strings can be used by any of the credentials for your deployment. While you can use the root user for all of your connections and applications, it might be better to generate credentials specifically for your applications to connect with. Documentation on generating credentials is on the [Getting Credentials and Connection Strings](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings) page.
+The connection strings can be used by any of the users on your deployment. While you can use the root user for all of your connections and applications, it might be better to generate users specifically for your applications to connect with. Documentation on creating users is on the [Creating Users and Getting Connection Strings](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings) page.
 
 ## Using Connection Information
 
@@ -84,10 +84,3 @@ All connections to {{site.data.keyword.databases-for-etcd}} are TLS 1.2 enabled,
 ### CLI plug-in support for the self-signed certificate
 
 You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the driver or client.
-
-
-
-
-
-
- 

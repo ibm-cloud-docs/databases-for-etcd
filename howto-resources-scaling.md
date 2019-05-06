@@ -15,7 +15,7 @@ subcollection: databases-for-etcd
 {:pre: .pre}
 {:tip: .tip}
 
-# Resources and Scaling
+# Managing Resources and Scaling
 {: #resources-scaling}
 
 A visual representation of your data members and their resource allocation is available on the _Settings_ tab of your deployment's _Manage_ page. 

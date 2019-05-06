@@ -18,7 +18,7 @@ subcollection: databases-for-etcd
 # Connecting with `etcdctl`
 {: #connecting-etcdctl}
 
-You can access your etcd database directly from a command-line client, which allows for direct interaction and monitoring of the data structures that are created within the database. It is also useful for administering and monitoring the keyspace and performance, making etcd transactions, managing leases, and other management activities.
+You can access your etcd database directly from a command-line client, which allows for direct interaction with the data structures that are created within the database. It is also useful for administering and monitoring the keyspace and performance, making etcd transactions, managing leases, and other management activities.
 
 {{site.data.keyword.databases-for-etcd}} only supports the etcd v3 API and datastore. Access to the v2 API is disabled. 
 {: .tip}
@@ -30,6 +30,9 @@ The `etcdctl` binary is available in the etcd distribution, which can be downloa
 ## Connecting
 
 Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+
+Any user on your deployment is able to connect using `etcdctl`, but the [root user](/docs/services/databases-for-etcd?topic=databases-for-etcd-user-management#the-root-user) does have more permissions on the cluster.
+{: .tip}
 
 The information `etcdctl` needs to make a connection to your deployment is in the "cli" section of your [connection strings](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings). The table contains a breakdown for reference.
 
@@ -63,17 +66,10 @@ More example commands are in the [etcd documentation](https://github.com/etcd-io
 
 ## Starting `etcdctl` from the IBM Cloud CLI
 
-The `ibmcloud cdb deployment-connections` command handles everything that is involved in creating the client connection. For example, to connect to a deployment named  "example-etcd" with an "example-user", use the following command.
+If you have both `etcdctl` and the [{{site.data.keyword.databases-for}} CLI Plug-in](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference) installed, the `ibmcloud cdb deployment-connections` command can handle creating the connection. For example, to connect to a deployment named  "example-etcd" with an "example-user", use the following command.
 
 ```
-ibmcloud cdb deployment-connections -u example-user admin example-etcd --start
-```
-Or
-```
-ibmcloud cdb cxn -u example-user example-etcd -s
+ibmcloud cdb deployment-connections -u example-user example-etcd --start
 ```
 
 The command prompts for the user's password and then runs the `etcdctl` command-line client to connect to the database.
-
-If you don't specify a user, the `deployment-connections` commands return information for the root user by default.
-{: .tip}
