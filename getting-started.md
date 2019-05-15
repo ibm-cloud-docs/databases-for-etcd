@@ -21,7 +21,7 @@ subcollection: databases-for-etcd
 This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-etcd-helloworld-nodejs) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.databases-for-etcd_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
 {: shortdesc}
 
-If you have already created your deployment and just want to connect to your etcd databases, you can skip to [getting your connection strings](/docs/services/databases-for-etcd?topic=databses-for-etcd-connection-strings) and [connecting with `etcdctl`](/docs/services/databases-for-etcd?topic=connecting-etcdctl).
+If you have already created your deployment and just want to connect to your etcd databases, you can skip to [getting your connection strings](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings) and [connecting with `etcdctl`](/docs/services/databases-for-etcd?topic=databases-for-etcd-connecting-etcdctl).
 {: .tip}
 
 ## Before you begin
