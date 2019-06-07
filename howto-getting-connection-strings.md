@@ -33,7 +33,7 @@ Access to your {{site.data.keyword.databases-for-etcd}} deployment is not limite
 
 All users on your deployment can use the connection strings, including connection strings for either public or private endpoints.
 
-When you create a user, it is assigned certain database roles and privileges. These privileges include the ability to login and read/write access to the entire keyspace . For more information, see the [Managing Users and Roles](/docs/services/databases-for-etcd?topic=databases-for-etcd-user-management) page.
+When you create a user, it is assigned certain database roles and privileges. These privileges include the ability to login and read/write access to the entire keyspace. For more information, see the [Managing Users and Roles](/docs/services/databases-for-etcd?topic=databases-for-etcd-user-management) page.
 
 ### Creating Users and Getting Connection Strings in _Service Credentials_
 
@@ -45,10 +45,6 @@ When you create a user, it is assigned certain database roles and privileges. Th
 6. Click **Add** to provision the new credentials. A username and password, and an associated etcd user is auto-generated.
 
 The new credentials appear in the table, and the connection strings are available as a JSON object in the click-to-copy field under _View Credentials_.
-
-#### Using Service IDs
-
-Because {{site.data.keyword.databases-for-etcd}} is an IAM service, you can use [Service IDs](/docs/iam?topic=iam-serviceids) to manage access to this service. For example, by using an IAM-managed Service ID, that user gets an etcd user and connection string in _Service Credentials_, and has API key access to the {{site.data.keyword.cloud_notm}} Databases API.  If you have a Service ID, enter its information under _Select Service ID_.
 
 ### Creating Users and Getting Connection Strings from the command line
 

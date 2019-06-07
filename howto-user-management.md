@@ -53,7 +53,7 @@ If you need users that are created from _Service Credentials_ to have a differen
 
 Users that are created in the [CLI](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#getting-credentials-and-connection-strings-from-the-command-line) and [API](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#getting-credentials-and-connection-strings-with-the-api) get the same role as _Service Credential_ users, `rwall`. They have access read and write access to all the keys in the database. If you need them to have a different role that you have created, you can use the root user to change their role.
 
-Users that are created directly from the API and CLI do not appear in _Service Credentials_, but you can [add them](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-connection-strings#generating-service-credentials-for-existing-users) if you choose.
+Users that are created directly from the API and CLI do not appear in _Service Credentials_, but you can [add them](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#generating-service-credentials-for-existing-users) if you choose.
 
 ## Users created in etcd
 
