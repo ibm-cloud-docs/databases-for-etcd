@@ -50,7 +50,7 @@ Users also receive their total disk space purchased, per database, in free backu
 ## Scaling per Member
 
 {{site.data.keyword.databases-for-etcd}} deployments have minimum and maximum allocation for disk and RAM as shown. Scaling deployments through the API/CLI provides more granularity and also allows a user to scale a database instance up to 4 TB of disk per member.
-- Disk minimum - 5 GB per member
+- Disk minimum - 20 GB per member
 - Disk maximum - 4 TB per member
 - Disk step granularity through API/CLI - 3072 MB total, 1024 MB per member
 - RAM minimum - 1 GB per member
