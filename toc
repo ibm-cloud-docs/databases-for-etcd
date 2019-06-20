@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="databases-for-etcd" audience="service" arm="4182638" href="/docs/services/databases-for-etcd/index.html" path="services/databases-for-etcd"}
+{: .toc subcollection="databases-for-etcd" category="databases" audience="service" arm="4182638" href="/docs/services/databases-for-etcd/index.html" path="services/databases-for-etcd"}
 Databases For etcd
 
 	{: .navgroup id="learn"}
