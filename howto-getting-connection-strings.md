@@ -49,25 +49,21 @@ The new credentials appear in the table, and the connection strings are availabl
 ### Creating Users and Getting Connection Strings from the command line
 
 If you manage your service through the {{site.data.keyword.cloud_notm}} CLI and the [cloud databases plug-in](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli), you can create a new user with `cdb user-create`. For example, to create a new user for an "example-deployment", use the following command.
-
-`ibmcloud cdb user-create example-deployment <newusername> <newpassword>`
-
-The response contains the task `ID`, `Deployment ID`, `Description`, `Created At`, `Status`, and `Progress Percentage` fields.  The `Status` and `Progress Percentage` fields update when the task is complete.
+```
+ibmcloud cdb user-create example-deployment <newusername> <newpassword>
+```
 
 Once the task has finished, you can retrieve the new user's connection strings with the `ibmcloud cdb deployment-connections` command.
-
 ```
-ibmcloud cdb deployment-connections example-deployment -u <newusername>
+ibmcloud cdb deployment-connections example-deployment -u <newusername> [--endpoint-type <endpoint type>]
 ```
 
 Full connection information is returned by the `ibmcloud cdb deployment-connections` command with the `--all` flag. To retrieve all the connection information for a deployment named  "example-deployment", use the following command.
-
 ```
-ibmcloud cdb deployment-connections example-deployment -u <newusername> --all
+ibmcloud cdb deployment-connections example-deployment -u <newusername> --all [--endpoint-type <endpoint type>]
 ```
 
-If you don't specify a user, the `deployment-connections` commands return information for the admin user by default.
-{: .tip}
+If you don't specify a user, the `deployment-connections` commands return information for the admin user by default. If you don't specify an endpoint type, the connection string returns the public endpoint by default. If your deployment only has a private endpoint, you have to specify `--endpoint-type private` or the commands return an error. The user and endpoint type is not enforced. You can use any user on your deployment with either endpoint (if both exist on your deployment).
 
 ### Creating Users and Getting Connection Strings from the API
 

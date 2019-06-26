@@ -29,7 +29,7 @@ subcollection: databases-for-etcd
 
 ## Data Resilience
 
-- [Backups](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-backups) are included in the service. {{site.data.keyword.databases-for-etcd}} backups reside in [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage) and are also [encrypted](/docs/services/cloud-object-storage?topic=cloud-object-storage-security).
+- [Backups](/docs/services/databases-for-etcd?topic=cloud-databases-dashboard-backups) are included in the service. {{site.data.keyword.databases-for-etcd}} backups reside in [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage) and are also [encrypted](/docs/services/cloud-object-storage?topic=cloud-object-storage-security).
 - All {{site.data.keyword.databases-for-etcd}} deployments are configured with replication to provide both data resilience and [high-availability](/docs/services/databases-for-etcd?topic=databases-for-etcd-high-availbility). Deployments contain a cluster with three nodes where all the nodes store data and maintain state with a quorum. 
 - If you deploy to an {{site.data.keyword.cloud_notm}} Single-Zone Region (SZR), each database node resides on a different host in the datacenter. 
 - If you deploy to an {{site.data.keyword.cloud_notm}} Multi-Zone Region (MZR), the nodes are spread over the region's availability zone locations.

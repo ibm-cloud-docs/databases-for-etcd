@@ -37,7 +37,7 @@ More information on IAM roles and actions for the {{site.data.keyword.databases-
 
 ## Using {{site.data.keyword.databases-for-etcd}}
 
-{{site.data.keyword.databases-for-etcd}} provides a UI, accessible by selecting _Manage_ from the left sidebar of your service and opening the management panel. You get a quick [Overview](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-overview) of your service as well as configuration settings on the [Settings](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-overview#settings) tab and access to your backups on the [Backups](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-backups) tab.
+{{site.data.keyword.databases-for-etcd}} provides a UI, accessible by selecting _Manage_ from the left sidebar of your service and opening the management panel. You get a quick [Overview](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-overview) of your service as well as configuration settings on the [Settings](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-overview#settings) tab and access to your backups on the [Backups](/docs/services/databases-for-etcd?topic=cloud-databases-dashboard-backups) tab.
 
 ### Using the {{site.data.keyword.cloud_notm}} command-line interface
 
