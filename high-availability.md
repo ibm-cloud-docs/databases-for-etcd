@@ -4,6 +4,8 @@ Copyright:
   years: 2018, 2019
 lastupdated: "2019-04-22"
 
+keywords: etcd
+
 subcollection: databases-for-etcd
 
 ---

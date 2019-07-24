@@ -4,6 +4,8 @@ Copyright:
   years: 2018, 2019
 lastupdated: "2019-07-16"
 
+keywords: etcd, kubernetes, cloud foundry
+
 subcollection: databases-for-etcd
 
 ---

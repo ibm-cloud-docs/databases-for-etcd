@@ -3,6 +3,8 @@ copyright:
   years: 2018,2019
 lastupdated: "2019-04-10"
 
+keywords: etcd, connection strings, credentials
+
 subcollection: databases-for-etcd
 
 ---
@@ -86,7 +88,7 @@ More information is available in the [API Reference](https://{DomainName}/apidoc
 
 Creating a new user from the CLI or API doesn't automatically populate that user's connection strings into _Service Credentials_. If you want to add them there, you can create a new credential with the existing user information.
 
-Enter the user name and password in the JSON field _Add Inline Configuration Parameters_, or specify a file where the JSON information is stored. For example, `{"existing_credentials":{"username":"Robert","password":"supersecure"}}`.
+Enter the user name and password in the JSON field _Add Inline Configuration Parameters_, or specify a file where the JSON information is stored. For example, `{"existing_credentials":{"username":"Robert","password":"supersecure"}}`. The resulting connection strings have the specified username and password filled in.
 
 Generating credentials from an existing user does not check for or create that user.
 {: tip}

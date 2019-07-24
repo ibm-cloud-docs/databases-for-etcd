@@ -4,6 +4,8 @@ Copyright:
   years: 2019
 lastupdated: "2019-01-16"
 
+keywords: etcd, monitoring
+
 subcollection: databases-for-etcd
 
 ---

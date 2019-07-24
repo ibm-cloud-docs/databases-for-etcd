@@ -3,6 +3,8 @@ copyright:
   years: 2018,2019
 lastupdated: "2019-04-10"
 
+keywords: etcd, etcdctl
+
 subcollection: databases-for-etcd
 
 ---

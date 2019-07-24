@@ -3,6 +3,8 @@ copyright:
   years: 2019,2018
 lastupdated: "2019-04-10"
 
+keywords: etcd, application
+
 subcollection: databases-for-etcd
 
 ---

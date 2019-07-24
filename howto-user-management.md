@@ -3,6 +3,8 @@ copyright:
   years: 2019
 lastupdated: "2019-04-24"
 
+keywords: etcd
+
 subcollection: databases-for-etcd
 
 ---
@@ -53,13 +55,13 @@ If you need users that are created from _Service Credentials_ to have a differen
 
 Users that are created in the [CLI](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#getting-credentials-and-connection-strings-from-the-command-line) and [API](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#getting-credentials-and-connection-strings-with-the-api) get the same role as _Service Credential_ users, `rwall`. They have access read and write access to all the keys in the database. If you need them to have a different role that you have created, you can use the root user to change their role.
 
-Users that are created directly from the API and CLI do not appear in _Service Credentials_, but you can [add them](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#generating-service-credentials-for-existing-users) if you choose.
+Users that are created directly from the API and CLI do not appear in _Service Credentials_, but you can [add them](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#adding-users-to-_service-credentials_) if you choose.
 
 ## Users created in etcd
 
 You can bypass creating users in _Service Credentials_, the CLI, the API, and [create users directly in etcd](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/authentication.md#working-with-users). 
 
-Users created directly in etcd do not appear in _Service Credentials_, but you can [add them there](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#generating-service-credentials-for-existing-users) if you choose. Note, that these users are not integrated with IAM controls, even if added to _Service Credentials_.
+Users created directly in etcd do not appear in _Service Credentials_, but you can [add them there](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#adding-users-to-_service-credentials_)) if you choose.
 
 ## The compose user
 
