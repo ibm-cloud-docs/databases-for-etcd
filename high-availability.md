@@ -49,7 +49,7 @@ etcd uses memory to cache data and can benefit from increasing the amount of mem
 
 ### Monitoring your deployment
 
-Deployment owners can [monitor](/docs/services/databases-for-etcd?topic=databases-for-etcd-monitoring) the state of the deployment, estimate typical resource usage, and scale the deployment accordingly.
+Deployment owners can [monitor](/docs/services/databases-for-etcd?topic=cloud-databases-monitoring) the state of the deployment, estimate typical resource usage, and scale the deployment accordingly.
 
 If you are planning on running operations that might put a spike in the usual resource usage, you can manually scale your service's resources up to avoid hitting resource limits.
 
