@@ -1,12 +1,12 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="databases-for-etcd" audience="service" category="databases" arm="4182638" href="/docs/services/databases-for-etcd/index.html" path="services/databases-for-etcd"}
+{: .toc subcollection="databases-for-etcd" audience="service" category="databases" arm="4182638" href="/docs/services/databases-for-etcd?topic=databases-for-etcd-getting-started" path="services/databases-for-etcd"}
 Databases For etcd
 
 	{: .navgroup id="learn"}
-	index.md
 	getting-started.md
+	[What is Databases for etcd?](https://www.ibm.com/cloud/databases-for-etcd)
 
 	{: .topicgroup}
 	Service Overview
