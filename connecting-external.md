@@ -70,7 +70,7 @@ curl https://35dae549-2275-4d3e-beed-d86f36022336.974550db55eb4ec0983f023940bf63
 -X POST -d '{"name": "ibm_cloud_59699685_b95e_4afe_9d39_7464c228563c", "password": "$PASSWORD"}'
 ```
 
-The `version` path parameter depends on the minor version of etcd running on your deployment. You can find the minor version on your [deployment's _Overview_ page](/docs/services/databases-for-etcd?topic=databases-for-etcd-deployment-overview). If you are running etcd 3.2, use `v3alpha` in the endpoint. If you are running etcd 3.3, use `v3beta` in the endpoint. Version information and example commands are in the [etcd documentation](https://github.com/etcd-io/etcd/blob/master/Documentation/dev-guide/api_grpc_gateway.md). Refer to the [etcd Swagger API definitions](https://github.com/etcd-io/etcd/blob/master/Documentation/dev-guide/apispec/swagger/rpc.swagger.json) for a full reference. 
+The `version` path parameter depends on the minor version of etcd running on your deployment. You can find the minor version on your [deployment's _Overview_ page](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-overview). If you are running etcd 3.2, use `v3alpha` in the endpoint. If you are running etcd 3.3, use `v3beta` in the endpoint. Version information and example commands are in the [etcd documentation](https://github.com/etcd-io/etcd/blob/master/Documentation/dev-guide/api_grpc_gateway.md). Refer to the [etcd Swagger API definitions](https://github.com/etcd-io/etcd/blob/master/Documentation/dev-guide/apispec/swagger/rpc.swagger.json) for a full reference. 
 
 ## TLS and self-signed certificate support
 

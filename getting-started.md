@@ -187,7 +187,7 @@ To start exploring your {{site.data.keyword.databases-for-etcd}} service, see th
 
 - [Dashboard Overview](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-overview)
 - [Backups](/docs/services/databases-for-etcd?topic=cloud-databases-dashboard-backups)
-- [Creating Users and Getting Connection Strings](/docs/services/databases-for-etcd?topic=databses-for-etcd-connection-strings)
+- [Creating Users and Getting Connection Strings](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings)
 
 
 [ibm_cloud_signup_url]: https://ibm.biz/databases-for-etcd-signup
