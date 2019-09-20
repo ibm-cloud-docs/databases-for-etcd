@@ -11,11 +11,13 @@ Databases For etcd
 	{: .topicgroup}
 	Service Overview
 		dashboard-overview.md
-		high-availability.md
+		learn-high-availability.md
+		learn-performance.md
 		security-compliance.md
 		pricing.md
 
 	/cloud-databases/cloud-databases-tutorial-k8s-app
+	/cloud-databases/cloud-databases-tutorial-cf-app
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}

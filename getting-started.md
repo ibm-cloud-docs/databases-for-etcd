@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018
-lastupdated: "2018-11-27"
+  years: 2019
+lastupdated: "2019-09-17"
 
 subcollection: databases-for-etcd
 
@@ -18,176 +18,174 @@ subcollection: databases-for-etcd
 # Getting Started Tutorial
 {: #getting-started}
 
-This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-etcd-helloworld-nodejs) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.databases-for-etcd_full}} service. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
-{: shortdesc}
-
-If you have already created your deployment and just want to connect to your etcd databases, you can skip to [getting your connection strings](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings) and [connecting with `etcdctl`](/docs/services/databases-for-etcd?topic=databases-for-etcd-connecting-etcdctl).
-{: .tip}
+This tutorial is a short introduction to using an {{site.data.keyword.databases-for-etcd_full}} deployment.
 
 ## Before you begin
 
-Make sure that you have an [{{site.data.keyword.cloud_notm}} account][ibm_cloud_signup_url]{:new_window}.
+- You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){:new_window}.
 
-You also need to install [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/downloads).
+- And a {{site.data.keyword.databases-for-etcd}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-etcd/). Give your deployment a memorable name that appears in your account's Resource List.
 
-## Step 1. Create a {{site.data.keyword.databases-for-etcd}} service instance
-{: #create-service}
+- [Set the Root Password](/docs/services/databases-for-etcd?topic=databases-for-etcd-root-password) for your deployment.
 
-You can create a {{site.data.keyword.databases-for-etcd}} service from the [{{site.data.keyword.databases-for-etcd}} page](https://cloud.ibm.com/catalog/services/databases-for-etcd/) in the {{site.data.keyword.cloud_notm}} catalog.
+## Connecting with `etcdctl`
 
-Choose a service name, region, organization and space to provision the service in, and for the **Select a database version** field, choose _Latest Preferred Version_. In this example, the service name is "example-etcd".
+Download and install `etcdctl`, which you can get from [the coreos/etcd repository](https://github.com/coreos/etcd/releases/latest). Once it is installed, you can get the formatted connection strings from the deployment's _Dashboard Overview_, in the _Connections_ panel. The _CLI_ tab contains information that a CLI client uses to make a connection to your deployment.
 
-Click **Create** to provision your service. Provisioning can take a while to complete. You are taken back to your {{site.data.keyword.cloud_notm}} _Dashboard_ while the service is provisioning. 
+![The CLI Connections Panel](images/getting-started-connection-cli.png)
 
-You can not connect an application to the service until provisioning has completed.
-{: .tip}
+First, save the _contents_ of the TLS certificate to a file and name the file with the TLS certificate _name_. Either save it to the location where you plan on running the `etcdctl` commands or remember where the file is saved so you can provide its full path to the environment variable.
 
-## Step 2. Clone the Hello World sample app from GitHub
-
-Clone the Hello World app to your local environment from your terminal by using the following command:
-
+Then, use the values in the _Environment_ and _Arguments_ fields to set up your environment so `etcdctl` can connect and issue commands on your deployment.
 ```
-git clone https://github.com/IBM-Cloud/clouddatabases-etcd-helloworld-nodejs.git
+export ETCDCTL_API=3
+export ETCDCTL_CACERT=b179a2b4-b76a-11e9-b9ae-c61492e0d24a
+export ETCDCTL_ENDPOINTS=https://156ed317-3aea-4732-a8fd-349c2bb9d39c.bkvfu0nd0m8k95k94ujg.databases.appdomain.cloud:31220
+export ETCDCTL_USER=root:password
 ```
 
-## Step 3. Install the app dependencies
-
-Use npm to install dependencies.
-
-1. From your terminal, change the directory to where the sample app is located.
-  
-  ```
-  cd clouddatabases-etcd-helloworld-nodejs
-  ```
-
-2. Install the dependencies listed in the `package.json` file.
-  
-  ```
-  npm install
-  ```
-
-## Step 4. Download and install the {{site.data.keyword.cloud_notm}} CLI tool
-
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli).
-
-## Step 5. Connect to {{site.data.keyword.cloud_notm}}
-
-1. Connect to {{site.data.keyword.cloud_notm}} in the command line tool and follow the prompts to log in.
-
-  ```
-  ibmcloud login
-  ```
-
-  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/iam?topic=iam-federated_id)) to learn more.
-  {: .tip}
-
-2. Make sure that you are targeting the correct {{site.data.keyword.cloud_notm}} org and space.
-
-  ```
-  ibmcloud target --cf
-  ```
-
-  Choose from the options provided, by using the same values that you used when you created the service.
-
-## Step 6. Create a Cloud Foundry alias for the database service.
-{: #create-alias}
-
-Make the database service discoverable by Cloud Foundry applications by giving it a Cloud Foundry alias. 
-
-`ibmcloud resource service-alias-create alias-name --instance-name instance-name`
-
-The alias name can be the same as the database service instance name. For example, use this command for database that was created in step 1.
-
-`ibmcloud resource service-alias-create example-etcd --instance-name example-etcd`
-
-## Step 7. Update the app's manifest file
-{: #update-manifest}
-
-{{site.data.keyword.cloud_notm}} uses a manifest file - `manifest.yml` to associate an application with a service. Follow these steps to create your manifest file.
-
-1. In an editor, open a new file and add the following text:
-
-  ```
-  ---
-  applications:
-  - name:    example-helloworld-nodejs
-    routes:
-    - route: example-helloworld-nodejs.us-south.cf.appdomain.cloud
-    memory:  128M
-    services:
-      - example-etcd
-  ```
-
-2. Change the route value to something unique. The route that you choose determines the subdomain of your application's URL. The format is `<route>.{region}.cf.appdomain.cloud`. Be sure the `{region}` matches where your application is deployed.
-3. Change the `name` value. The name that you choose is displayed in your {{site.data.keyword.cloud_notm}} dashboard.
-4. Update the `services` value to match the alias of the service you created in [Create a Cloud Foundry alias for the database service](#create-alias).
-
-## Step 8. Push the app to {{site.data.keyword.cloud_notm}}.
-
-This step fails if the service is not finished provisioning from Step 1. You can check its progress on your {{site.data.keyword.cloud_notm}} _Dashboard_.
-{: .tip}
-
-When you push the app, it is automatically bound to the service specified in the manifest file.
-
+You should now be able to use `etcdctl` to issue commands to your deployment.
 ```
-ibmcloud cf push
+$ etcdctl put foo bar
+OK
+$ etcdctl get foo
+foo
+bar
 ```
 
-## Step 9. Check that the app is connected to your {{site.data.keyword.databases-for-etcd}} service
+## Using etcd
 
-1. Go to your {{site.data.keyword.databases-for-etcd}} service dashboard
-2. Select _Connections_ from the dashboard menu. Your application is listed under _Connected Applications_.
+A good way to get familiar with etcd is to play around with some of its features. This tutorial has a few quick examples on prefixes, transactions, leases, and watchers.
 
-If your application is not listed, repeat Steps 7 and 8, making sure that you entered the correct details in [manifest.yml](#update-manifest).
+Expanded examples and more features can be found in the [etcd demo](https://etcd.io/docs/v3.3.12/demo/), and more general information on using etcd is in [Interacting with etcd](https://etcd.io/docs/v3.3.12/dev-guide/interacting_v3/).
 
-## Step 10. Use the app
+### Prefixes
 
-Now, when you visit `<route>.{region}.cf.appdomain.cloud/` you can see the contents of your {{site.data.keyword.databases-for-etcd}} collection. As you add words and their definitions, they are added to the database and displayed. If you stop and restart the app, you see any words and definitions that were already added are now listed.
-
-## Running the app locally
-
-Instead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it locally to test the connection to your {{site.data.keyword.databases-for-etcd}} service instance. To connect to the service, you need to create a set of service credentials.
-
-2. Select _Service Credentials_ from the main menu to open the Service Credentials view.
-3. Click **New Credential**.
-4. Choose a name for your credentials and click **Add**.
-5. Your new credentials are now listed. Click **View credentials** in the corresponding row of the table to view the credentials, and click the **Copy** icon to copy your credentials.
-6. In your editor of choice, create a new file with the following, inserting your credentials as shown:
-
-  ```
-  {
-    "services": {
-      "databases-for-etcd": [
-        {
-          "credentials": INSERT YOUR CREDENTIALS HERE
-        }
-      ]
-    }
-  }
-  ```
-7. Save the file as `vcap-local.json` in the directory where the sample app is located.
-
-To avoid accidentally exposing your credentials when you push an application to GitHub or {{site.data.keyword.cloud_notm}}, make sure that the file that contains your credentials is listed in the relevant ignore file. If you open `.cfignore` and `.gitignore` in your application directory, you can see that `vcap-local.json` is listed in both. It is not included in the files that are uploaded when you push the app to either GitHub or {{site.data.keyword.cloud_notm}}.
-{: .tip}
-
-Now start the local server.
+etcd stores key-values in a hieracrchical system, that also allows you to store and retrieve information nested under layers of keys. 
 ```
-npm start
+$ etcdctl put /foo-service/container1 examplename
+OK
 ```
 
-The app is now running at http://localhost:8080. You can add words and definitions to your {{site.data.keyword.databases-for-etcd}} database. When you stop and restart the app, any words you added are displayed when you refresh the page.
+Use the --prefix option on the get command to query on the top-level directory.
+```
+$ etcdctl get --prefix /foo-service
+/foo-service/container1
+examplename
+```
 
-For more information about the credentials you created for the application to connect to your service, see [Using Service Credentials](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#connection-string-breakdown).
+If adding more sub-directory keys and values, then the --prefix option will return all of them in the top-level directory.
+```
+$ etcdctl put /foo-service/container2 examplename2
+OK
+$ etcdctl put /foo-service/container3 examplename3
+OK
 
-## Next steps
+$ etcdctl get --prefix /foo-service
+/foo-service/container1
+examplename
+/foo-service/container2
+examplename2
+/foo-service/container3
+examplename3
+```
 
-To understand more about how the [sample app](https://github.com/IBM-Cloud/clouddatabases-etcd-helloworld-nodejs) works, you can read the application's readme file, or the code comments in `server.js`, which give some information about the app's functions.
+### Transactions
 
-To start exploring your {{site.data.keyword.databases-for-etcd}} service, see the following topics about the service dashboard:
+Transactions take a series of etcd commands and applies them all as a single, atomic transaction. The txn command is broken into three parts.
+- Define the key you would like to modify and the value it should be before modifying.
+- If the comparison is successful, enter the commands to execute
+- If the comparison is a failure, enter the commands to execute
 
-- [Dashboard Overview](/docs/services/databases-for-etcd?topic=databases-for-etcd-dashboard-overview)
-- [Backups](/docs/services/databases-for-etcd?topic=cloud-databases-dashboard-backups)
-- [Creating Users and Getting Connection Strings](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings)
+If you use interactive mode: etcdctl txn -i the session will prompt for the parts.
+{. :tip}
+
+```
+$ etcdctl put key1 1
+OK
+
+$ etcdctl txn -i
+# compares:
+mod("key1") > "0"
+# success requests (get, put, delete):
+put key1 "overwrote-key1"
+>
+>
+# failure requests (get, put, delete):
+>
+>
+SUCCESS
+
+OK
+```
+
+To check that the new value got assigned to the key:
+```
+etcdctl get key1
+> key1
+overwrote-key1
+```
+
+### Leases
+
+etcd3 uses leases to manage temporary keys. A lease is created with a time-to-live (TTL) and then attached to a key at creation. One lease can be used for multiple keys. When the TTL on the lease expires, it deletes all associated keys. To create a lease, use grant with a number of seconds for TTL.
+```
+$ etcdctl lease grant 500
+lease 694d5cefe052b00d granted with TTL(500s)
+```
+
+Then create a key/pair with the --lease option.
+```
+$ etcdctl put foo1 bar1 --lease=694d5cefe052b00d
+OK
+```
+
+You can find out what keys are associated with a granted lease, along with the time remaining on the lease.
+```
+$ etcdctl lease timetolive 694d5cefe052b00d --keys
+lease 694d5cefe052b00d granted with TTL(500s), remaining(377s), attached keys([foo1])
+```
+
+After the time on a lease has expired, requesting the value of a key not return anything. If you try to provision a key on a lease that has already expired, it will return an error.
+```
+$ etcdctl lease grant 10
+lease 694d5cefe052b009 granted with TTL(10s)
+$ etcdctl put foo1 bar1 --lease=694d5cefe052b009
+Error:  etcdserver: requested lease not found
+```
+
+### Watchers
+
+Keep track of changes to keys using the watch command. As an example, running `etcdctl` in one terminal window will keep the connection open and update with any changes to the key that it is watching. Updating the value of the key in a separate terminal will have the results displayed in both terminals.
+```
+#Terminal 1
+$ etcdctl put greeting 'Hello World'
+>Hello World
+
+#Terminal 2
+$ etcdctl watch greeting
+
+#Terminal 1
+$ etcdctl put greeting 'Hello Watcher'
+>Hello Watcher
+
+#Terminal 2
+> PUT
+greeting
+Hello Watcher
+```
+
+The connection is left open, and continues to watch that key for subsequent changes.
 
 
-[ibm_cloud_signup_url]: https://ibm.biz/databases-for-etcd-signup
+## Next Steps
+
+If you are just using etcd for the first time, it is a good idea to take a tour through the [etcd documentation](https://etcd.io/docs/v3.3.12/). 
+
+If you are planning to use {{site.data.keyword.databases-for-etcd}} for your applications, check out some of our other pages on 
+- [Connecting an external application](/docs/services/databases-for-etcd?topic=databases-for-etcd-external-app)
+- [Connecting an IBM Cloud application](/docs/services/databases-for-etcd?topic=databases-for-etcd-ibmcloud-app)
+
+Also, to ensure the stability of your applications and your database, check out the pages on 
+- [High-Availability](/docs/services/databases-for-etcd?topic=databases-for-etcd-high-availability)
+- [Performance](/docs/services/databases-for-etcd?topic=databases-for-etcd-performance)
