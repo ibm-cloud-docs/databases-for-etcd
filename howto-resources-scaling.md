@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2019
-lastupdated: "2019-04-23"
+lastupdated: "2019-09-07"
 
 keywords: etcd, scaling
 
@@ -39,7 +39,10 @@ You cannot scale down storage. You can recover space by backing up and restoring
 If you find that your deployment suffers from performance issues due to a lack of memory, you can scale the amount of RAM allocated to your service. The amount of memory you allocate to the deployment is split between the three three members. Adding memory to the total allocation adds memory to the members equally.
 
 **Dedicated Cores** - 
-If you provisioned your deployment with dedicated cores, you can increase the CPU allocation to the deployment. This option is not available on deployments that were not provisioned with an initial CPU allocation.
+You can enable or increase the CPU allocation to the deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployment is then allocated the number of CPUs you specify. The default of 0 dedicated cores uses compute resources on shared hosts.
+
+A few scaling operations can be more long running than others. Enabling dedicated cores moves your deployment to its own host and can take longer than just adding more cores. Similarly, drastically increasing RAM or Disk can take longer than smaller increases to account for provisioning more underlying hardware resources.
+{: .tip}
 
 ## Scaling in the UI
 
@@ -62,6 +65,13 @@ Count   3
 |   Allocation per member   1024mb
 |   Minimum                 3072mb
 |   Step Size               384mb
+|   Adjustable              true
+|
++   CPU
+|   Allocation              0
+|   Allocation per member   0
+|   Minimum                 9
+|   Step Size               3
 |   Adjustable              true
 |
 +   Disk
