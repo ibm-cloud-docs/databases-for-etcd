@@ -38,7 +38,3 @@ etcd uses memory to cache data and can benefit from increasing the amount of mem
 Deployment owners can [monitor](/docs/services/databases-for-etcd?topic=cloud-databases-monitoring) the state of the deployment, estimate typical resource usage, and scale the deployment accordingly.
 
 If you are planning on running operations that might put a spike in the usual resource usage, you can manually scale your service's resources up to avoid hitting resource limits.
-
-## SLA
-
-{{site.data.keyword.databases-for-etcd}} deployments conform to the {{site.data.keyword.cloud_notm}} [SLA terms](https://cloud.ibm.com/docs/overview/zero_downtime.html#SLAs).

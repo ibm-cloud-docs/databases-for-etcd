@@ -32,3 +32,7 @@ Because {{site.data.keyword.databases-for-etcd}} is a managed service, regular u
 Your applications have to be designed to handle temporary interruptions to the database, implement error handling for failed database commands, and implement retry logic to recover from a temporary interruption.
 
 Several minutes of database unavailability or connection interruptions are not expected. Open a [support ticket](https://cloud.ibm.com/unifiedsupport/cases/add) with details if you have time periods of no connectivity longer than a minute, so we can investigate.
+
+## SLA
+
+{{site.data.keyword.databases-for-etcd}} deployments conform to the {{site.data.keyword.cloud_notm}} [SLA terms](/docs/overview?topic=overview-slas).
