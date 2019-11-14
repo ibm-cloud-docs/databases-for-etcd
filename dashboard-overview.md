@@ -73,7 +73,7 @@ For more information about the {{site.data.keyword.cloud_notm}} databases API, s
 
 The _Settings_ tab contains the UI for many of the tunable settings for your deployment. You can 
 - [scale](/docs/services/databases-for-etcd?topic=databases-for-etcd-resources-scaling)
-- [change the admin password](/docs/services/databases-for-etcd?topic=databases-for-etcd-admin-password)
+- [change the root password](/docs/services/databases-for-etcd?topic=databases-for-etcd-root-password)
 - [configure public and private endpoints](/docs/services/databases-for-etcd?topic=cloud-databases-service-endpoints)
 - [implement or modify an IP whitelist](/docs/services/databases-for-etcd?topic=cloud-databases-whitelisting)
 

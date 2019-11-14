@@ -24,7 +24,7 @@ This tutorial is a short introduction to using an {{site.data.keyword.databases-
 
 - You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){:new_window}.
 
-- And a {{site.data.keyword.databases-for-etcd}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-etcd/). Give your deployment a memorable name that appears in your account's Resource List.
+- And a {{site.data.keyword.databases-for-etcd}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-etcd). Give your deployment a memorable name that appears in your account's Resource List.
 
 - [Set the Root Password](/docs/services/databases-for-etcd?topic=databases-for-etcd-root-password) for your deployment.
 
