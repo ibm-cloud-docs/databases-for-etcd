@@ -1,10 +1,10 @@
 ---
 
 Copyright:
-  years: 2018, 2019
-lastupdated: "2019-09-12"
+  years: 2018, 2020
+lastupdated: "2020-01-10"
 
-keywords: etcd
+keywords: etcd, databases, monitoring, scaling, autoscaling, resources
 
 subcollection: databases-for-etcd
 
@@ -23,6 +23,12 @@ subcollection: databases-for-etcd
 
 {{site.data.keyword.databases-for-etcd}} deployments can be [scaled to your usage](/docs/services/databases-for-etcd?topic=databases-for-etcd-resources-scaling), but they do not auto-scale. There are a few factors to consider if you are concerned about the performance of your deployment.
 
+{{site.data.keyword.databases-for-etcd_full}} deployments can be both manually [scaled to your usage](/docs/services/databases-for-etcd?topic=databases-for-etcd-resources-scaling), or configured to [autoscale](/docs/services/databases-for-etcd?topic=databases-for-etcd-autoscaling) under certain resource conditions. There are a few factors to consider if you are tuning the performance of your deployment.
+
+## Monitoring your deployment
+
+{{site.data.keyword.databases-for-etcd}} deployments offer an integration with the [{{site.data.keyword.cloud_notm}} Monitoring service](/docs/services/databases-for-etcd?topic=cloud-databases-monitoring) for basic monitoring of resource usage on your deployment. Many of the available metrics, like disk usage and IOPS, are presented to help you configure [autoscaling](/docs/services/databases-for-etcd?topic=databases-for-etcd-autoscaling) on your deployment. Observing trends in your usage and configuring the autoscaling to respond to them can help alleviate performance problems before your databases become unstable due to resource exhaustion.
+
 ## Storage Limits and Disk IOPS
 
 etcd has a [storage limit](https://coreos.com/etcd/docs/latest/dev-guide/limit.html) of 8 GB of data on a single deployment. It is not possible to store more than 8 GB of data in an etcd deployment, and exceeding the limit will make your deployment read-only.
@@ -32,9 +38,3 @@ etcd has a [storage limit](https://coreos.com/etcd/docs/latest/dev-guide/limit.h
 ## Memory Usage
 
 etcd uses memory to cache data and can benefit from increasing the amount of memory to at least the size of the data set. Memory is also used to maintain the watchers, so if your use-case requires thousands of watchers, you can benefit from increasing the amount of RAM available to your deployment ever further.
-
-## Monitoring your deployment
-
-Deployment owners can [monitor](/docs/services/databases-for-etcd?topic=cloud-databases-monitoring) the state of the deployment, estimate typical resource usage, and scale the deployment accordingly.
-
-If you are planning on running operations that might put a spike in the usual resource usage, you can manually scale your service's resources up to avoid hitting resource limits.

@@ -4,7 +4,7 @@ Copyright:
   years: 2019
 lastupdated: "2019-09-07"
 
-keywords: etcd, scaling
+keywords: etcd, manual scaling, memory, disk I/O,
 
 subcollection: databases-for-etcd
 
@@ -17,10 +17,10 @@ subcollection: databases-for-etcd
 {:pre: .pre}
 {:tip: .tip}
 
-# Managing Resources and Scaling
+# Scaling Disk, Memory, and CPU
 {: #resources-scaling}
 
-A visual representation of your data members and their resource allocation is available on the _Settings_ tab of your deployment's _Manage_ page. 
+A visual representation of your data members and their resource allocation is available on the _Resources_ tab of your deployment's _Manage_ page. 
 
 ![The Scale Resources Panel in _Settings_](images/settings-scaling.png)
 
