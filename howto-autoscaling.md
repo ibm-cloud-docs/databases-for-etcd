@@ -37,16 +37,26 @@ Memory - Memory autoscaling is based on Disk I/O utilization in order to provide
 
 Disk - Disk autoscaling can scale when either disk usage reaches a certain threshold, Disk I/O utilization reach a certain threshold, or both. (If looking at the "or" in the UI, it operates as an `inclusive or`, `|`, `v`.) The amount of IOPS available to your deployment increases with disk size at a ratio of 10 IOPS for each GB.
 
-The resource numbers refer to each database node in a deployment. For example, there are three data members in an etcd deployment and if the deployment is scaled with 10GB of disk and 1GB of RAM, that means each member gets 10GB of disk and 1GB of RAM. The total resources added to your deployment is 20GB of disk and 2GB of RAM.
+The resource numbers refer to each database node in a deployment. For example, there are three data members in an etcd deployment and if the deployment is scaled with 10GB of disk and 1GB of RAM, that means each member gets 10GB of disk and 1GB of RAM. The total resources added to your deployment is 30 GB of disk and 3 GB of RAM.
 
-Limits 
-- can't set anything to scale in an interval less than 60 seconds.
-- Maximum Disk = 4 TB per member
-- Maximum RAM = 112 GB per member
-- etcd has an 8 GB storage limit. Extra storage is strictly for IOPS availability.
+## Scaling Considerations
 
-Autoscaling does not scale down deployments where disk or memory usage has shrunk. The RAM provisioned to your deployment remains for your future needs, or until you scale down your deployment manually. The disk provisioned to your deployment remains because disk can not be scaled down. 
-{: .tip}
+- Scaling your deployment up might cause your databases to restart. If you scale RAM or CPU and your deployment needs to be moved to a host with more capacity, then the databases are restarted as part of the move.
+
+- Disk can not be scaled down.
+
+- A few scaling operations can be more long running than others. Drastically increasing RAM or Disk can take longer than smaller increases to account for provisioning more underlying hardware resources.
+
+- Autoscaling operations are logged in [Activity Tracker](/docs/services/databases-for-etcd?topic=cloud-databases-activity-tracker).
+
+- Limits
+  - can't set anything to scale in an interval less than 60 seconds.
+  - Maximum Disk = 4 TB per member
+  - Maximum RAM = 112 GB per member
+
+- Autoscaling does not scale down deployments where disk or memory usage has shrunk. The RAM provisioned to your deployment remains for your future needs, or until you scale down your deployment manually. The disk provisioned to your deployment remains because disk can not be scaled down.
+
+- If you just need to add resources to your deployment occasionally or rarely, you can [manually scale](/docs/services/databases-for-postgresql?topic=databases-for-etcd-resources-scaling) your deployment.
 
 ## Configuring Autoscaling in the UI
 
