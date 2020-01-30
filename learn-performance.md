@@ -21,8 +21,6 @@ subcollection: databases-for-etcd
 # Performance
 {: #performance}
 
-{{site.data.keyword.databases-for-etcd}} deployments can be [scaled to your usage](/docs/services/databases-for-etcd?topic=databases-for-etcd-resources-scaling), but they do not auto-scale. There are a few factors to consider if you are concerned about the performance of your deployment.
-
 {{site.data.keyword.databases-for-etcd_full}} deployments can be both manually [scaled to your usage](/docs/services/databases-for-etcd?topic=databases-for-etcd-resources-scaling), or configured to [autoscale](/docs/services/databases-for-etcd?topic=databases-for-etcd-autoscaling) under certain resource conditions. There are a few factors to consider if you are tuning the performance of your deployment.
 
 ## Monitoring your deployment

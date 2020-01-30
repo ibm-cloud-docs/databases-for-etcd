@@ -56,7 +56,7 @@ The resource numbers refer to each database node in a deployment. For example, t
 
 - Autoscaling does not scale down deployments where disk or memory usage has shrunk. The RAM provisioned to your deployment remains for your future needs, or until you scale down your deployment manually. The disk provisioned to your deployment remains because disk can not be scaled down.
 
-- If you just need to add resources to your deployment occasionally or rarely, you can [manually scale](/docs/services/databases-for-postgresql?topic=databases-for-etcd-resources-scaling) your deployment.
+- If you just need to add resources to your deployment occasionally or rarely, you can [manually scale](/docs/services/databases-for-etcd?topic=databases-for-etcd-resources-scaling) your deployment.
 
 ## Configuring Autoscaling in the UI
 
