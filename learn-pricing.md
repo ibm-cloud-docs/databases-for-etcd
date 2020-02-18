@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2019
-lastupdated: "2019-09-07"
+  years: 2019, 2020
+lastupdated: "2020-02-17"
 
-keywords: etcd, pricing
+keywords: etcd, databases, pricing, resources, scaling
 
 subcollection: databases-for-etcd
 
@@ -58,10 +58,12 @@ Dedicated cores are an optional feature. The default `Shared CPU` setting provis
 ## Scaling per Member
 
 {{site.data.keyword.databases-for-etcd}} deployments have minimum and maximum allocation for disk and RAM as shown. Scaling deployments through the API/CLI provides more granularity and also allows a user to scale a database instance up to 4 TB of disk per member.
-- Disk minimum - 20 GB per member
-- Disk maximum - 4 TB per member
-- Disk step granularity through API/CLI - 3072 MB total, 1024 MB per member
-- RAM minimum - 1 GB per member
-- RAM maximum - 112 GB per member
-- RAM step granularity through API/CLI - 384 MB total, 128 MB per member
+
+Resource | Minimum | Maximum | Scaling Granularity (API/CLI)
+----------|-----|-----|-------
+Disk | 5 GB per member | 4 TB per member | 1024 MB per member
+RAM | 1 GB per member | 112 GB per member | 128 MB per member
+CPU (if enabled) | 3 CPUs per member | 28 CPUs per member| 1 CPU per member
+{: caption="Table 2. Per Member Scaling Limits" caption-side="top"}
+
 
