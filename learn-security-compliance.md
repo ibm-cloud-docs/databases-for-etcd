@@ -25,9 +25,10 @@ subcollection: databases-for-etcd
 - All {{site.data.keyword.databases-for-etcd}} connections use TLS/SSL encryption for data in transit. The current supported version of this encryption is TLS 1.2.
 - Access to the Account, Management Console UI, and API is secured via [Identity and Access Management (IAM)](/docs/services/databases-for-etcd?topic=cloud-databases-iam).
 - Access to the database is secured through the standard access controls provided by the database. These access controls are configured to require valid database-level credentials that are obtainable only through prior access to the database or through our Management Console UI or API.
-- All {{site.data.keyword.databases-for-etcd}} storage is provided on storage encrypted with [{{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-about). Bring-your-own-key (BYOK) for encryption is also available through [Key Protect](/docs/services/databases-for-etcd?topic=cloud-databases-key-protect).
+- All {{site.data.keyword.databases-for-etcd}} storage is provided on storage encrypted with LUKS using AES-256. The default keys are managed by [{{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-about). Bring-your-own-key (BYOK) for encryption is also available through [Key Protect Integration](/docs/services/databases-for-etcd?topic=cloud-databases-key-protect).
 - IP Whitelisting - All deployments support [whitelisting IP addresses](/docs/services/databases-for-etcd?topic=cloud-databases-whitelisting) to restrict access to the service.
 - Public and Private Networking - {{site.data.keyword.databases-for-etcd}} is integrated with [Service Endpoints](/docs/services/databases-for-etcd?topic=cloud-databases-service-endpoints). You can select whether to use connections over the public network, the {{site.data.keyword.cloud_notm}} internal network, or both.
+- Dedicated Cores - Allocating dedicated cores to your deployment will introduce hypervisor-level isolation to your database instance, ensuring your data processing and RAM remain separated from other customers. It also provides a guaranteed minimum amount of CPUs to your deployment. Deployments with dedicated cores, deployed in the same Resource Group and {{site.data.keyword.cloud_notm}} Region, may share a hypervisor.
 
 ## Data Resilience
 
