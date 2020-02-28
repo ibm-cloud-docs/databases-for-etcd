@@ -60,6 +60,7 @@ Node|`etcd3`|[Link](https://mixer.github.io/etcd3/classes/index_.etcd3.html)
 Java|`jetcd`|[Link](https://github.com/etcd-io/jetcd)
 Java|`etcd-java`|[Link](https://github.com/IBM/etcd-java)
 Go|`etcd/client`|[Link](https://github.com/etcd-io/etcd/tree/master/client)
+Python|`python-etcd`|[Link](https://python-etcd.readthedocs.io/en/latest/)
 {: caption="Table 2. Common etcd drivers" caption-side="top"}
 
 ## Connecting without a Driver
