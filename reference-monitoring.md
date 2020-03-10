@@ -3,7 +3,7 @@ copyright:
   years: 2020
 lastupdated: "2020-03-02"
 
-keywords: etcd, sysdig, monitoring, metrics
+keywords: etcd, sysdig, monitoring, metrics, iops, disk usage, memory usage
 
 subcollection: databases-for-etcd
 
@@ -15,9 +15,15 @@ subcollection: databases-for-etcd
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:important: .important}
 
 # Sysdig Monitoring Integration
-{: #monitoring}
+{: #sysdig-monitoring}
+
+Sysdig monitoring is currently only available for deployments in the `eu-gb` region. 
+{: important}
+
+To see your {{site.data.keyword.databases-for-etcd_full}} dashboards in Sysdig, you have to [Enable Platform Metrics](/docs/Monitoring-with-Sysdig?topic=Sysdig-platform_metrics_enabling) in the same region as your deployment. If you have deployments in more than one region, you have to provision Sysdig and enable platform metics in each region.
 
 ## Available Metrics
 {: metrics-by-plan}
