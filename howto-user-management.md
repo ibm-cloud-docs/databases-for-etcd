@@ -47,15 +47,15 @@ ETCDCTL_API=3 etcdctl --cacert=c5f07736-d94c-11e8-a2e9-62ec2ed68f84 --endpoints=
 
 ## _Service Credential_ Users
 
-Users that you [create through the _Service Credentials_ panel](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#generating-connection-strings-from-service-credentials) are given the role `rwall`. They have access read and write access to all the keys in the database.
+Users that you create through the _Service Credentials_ panel are given the role `rwall`. They have access read and write access to all the keys in the database.
 
 If you need users that are created from _Service Credentials_ to have a different role, you can use the root user to change their role.
 
 ## Users created through the CLI and the API
 
-Users that are created in the [CLI](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#getting-credentials-and-connection-strings-from-the-command-line) and [API](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#getting-credentials-and-connection-strings-with-the-api) get the same role as _Service Credential_ users, `rwall`. They have access read and write access to all the keys in the database. If you need them to have a different role that you have created, you can use the root user to change their role.
+Users that are created in the CLI and API get the same role as _Service Credential_ users, `rwall`. They have access read and write access to all the keys in the database. If you need them to have a different role that you have created, you can use the root user to change their role.
 
-Users that are created directly from the API and CLI do not appear in _Service Credentials_, but you can [add them](/docs/services/databases-for-etcd?topic=databases-for-etcd-connection-strings#adding-users-to-_service-credentials_) if you choose.
+Users that are created directly from the API and CLI do not appear in _Service Credentials_, but you can add them if you choose.
 
 ## Users created in etcd
 

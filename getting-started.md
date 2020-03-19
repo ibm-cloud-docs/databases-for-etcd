@@ -61,20 +61,20 @@ Expanded examples and more features can be found in the [etcd demo](https://etcd
 
 ### Prefixes
 
-etcd stores key-values in a hieracrchical system, that also allows you to store and retrieve information nested under layers of keys. 
+etcd stores key-values in a hierarchical system that allows you to store and retrieve information that is nested under layers of keys. 
 ```
 $ etcdctl put /foo-service/container1 examplename
 OK
 ```
 
-Use the --prefix option on the get command to query on the top-level directory.
+Use the `--prefix` option on the get command to query on the top-level directory.
 ```
 $ etcdctl get --prefix /foo-service
 /foo-service/container1
 examplename
 ```
 
-If adding more sub-directory keys and values, then the --prefix option will return all of them in the top-level directory.
+If adding more subdirectory keys and values, then the `--prefix` option returns all of them in the top-level directory.
 ```
 $ etcdctl put /foo-service/container2 examplename2
 OK
@@ -92,13 +92,13 @@ examplename3
 
 ### Transactions
 
-Transactions take a series of etcd commands and applies them all as a single, atomic transaction. The txn command is broken into three parts.
-- Define the key you would like to modify and the value it should be before modifying.
-- If the comparison is successful, enter the commands to execute
-- If the comparison is a failure, enter the commands to execute
+Transactions take a series of etcd commands and apply them all as a single, atomic transaction. The `txn` command is broken into three parts.
+- Define the key you would like to modify and its value before modifying.
+- If the comparison is successful, enter the commands to execute.
+- If the comparison is a failure, enter the commands to execute.
 
-If you use interactive mode: etcdctl txn -i the session will prompt for the parts.
-{. :tip}
+If you use interactive mode, `etcdctl txn -i`, the session prompts for the parts.
+{: .tip}
 
 ```
 $ etcdctl put key1 1
@@ -119,7 +119,7 @@ SUCCESS
 OK
 ```
 
-To check that the new value got assigned to the key:
+To check that the new value got assigned to the key,
 ```
 etcdctl get key1
 > key1
@@ -134,7 +134,7 @@ $ etcdctl lease grant 500
 lease 694d5cefe052b00d granted with TTL(500s)
 ```
 
-Then create a key/pair with the --lease option.
+Then, create a key/pair with the `--lease` option.
 ```
 $ etcdctl put foo1 bar1 --lease=694d5cefe052b00d
 OK
@@ -146,7 +146,7 @@ $ etcdctl lease timetolive 694d5cefe052b00d --keys
 lease 694d5cefe052b00d granted with TTL(500s), remaining(377s), attached keys([foo1])
 ```
 
-After the time on a lease has expired, requesting the value of a key not return anything. If you try to provision a key on a lease that has already expired, it will return an error.
+After the time on a lease expires, requesting the value of a key does not return anything. If you try to provision a key on a lease that has already expired, it returns an error.
 ```
 $ etcdctl lease grant 10
 lease 694d5cefe052b009 granted with TTL(10s)
@@ -156,7 +156,7 @@ Error:  etcdserver: requested lease not found
 
 ### Watchers
 
-Keep track of changes to keys using the watch command. As an example, running `etcdctl` in one terminal window will keep the connection open and update with any changes to the key that it is watching. Updating the value of the key in a separate terminal will have the results displayed in both terminals.
+Keep track of changes to keys by using the watch command. As an example, running `etcdctl` in one terminal window keeps the connection open and update with any changes to the key that it is watching. Updating the value of the key in a separate terminal displays in both terminals.
 ```
 #Terminal 1
 $ etcdctl put greeting 'Hello World'
@@ -182,7 +182,7 @@ The connection is left open, and continues to watch that key for subsequent chan
 
 If you are just using etcd for the first time, it is a good idea to take a tour through the [etcd documentation](https://etcd.io/docs/v3.3.12/). 
 
-If you are planning to use {{site.data.keyword.databases-for-etcd}} for your applications, check out some of our other pages on 
+If you are planning to use {{site.data.keyword.databases-for-etcd}} for your applications, check out some of our other documentation pages.
 - [Connecting an external application](/docs/services/databases-for-etcd?topic=databases-for-etcd-external-app)
 - [Connecting an IBM Cloud application](/docs/services/databases-for-etcd?topic=databases-for-etcd-ibmcloud-app)
 

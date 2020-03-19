@@ -19,7 +19,7 @@ subcollection: databases-for-etcd
 # Pricing
 {: #pricing}
 
-An {{site.data.keyword.databases-for-etcd_full}} Standard plan deploys as one highly available etcd cluster with three data members. Your data is replicated across members. The Standard plan is priced based on the total amount of disk storage, RAM, dedicated cores, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.databases-for-etcd}} deployments have a minimum of 20 GB of disk (200 IOPS) and 1 GB of RAM per data member. Review the [documentation on performance](/docs/services/databases-for-etcd?topic=databases-for-etcd-high-availability#performance) to see the importance of accounting for IOPS in your capacity planning. 
+An {{site.data.keyword.databases-for-etcd_full}} Standard plan deploys as one highly available etcd cluster with three data members. Your data is replicated across members. The Standard plan is priced based on the total amount of disk storage, RAM, dedicated cores, and backup storage that is allocated to deployments, prorated hourly. {{site.data.keyword.databases-for-etcd}} deployments have a minimum of 20 GB of disk (200 IOPS) and 1 GB of RAM per data member. Review the [documentation on performance](/docs/services/databases-for-etcd?topic=databases-for-etcd-performance) to see the importance of accounting for IOPS in your capacity planning. 
 
 ## Cost Breakdown
 

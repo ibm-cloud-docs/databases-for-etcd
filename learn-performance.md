@@ -31,7 +31,7 @@ subcollection: databases-for-etcd
 
 etcd has a [storage limit](https://coreos.com/etcd/docs/latest/dev-guide/limit.html) of 8 GB of data on a single deployment. It is not possible to store more than 8 GB of data in an etcd deployment, and exceeding the limit will make your deployment read-only.
 
-{{site.data.keyword.databases-for-etcd}} deployments over-allocate space because disk allocation affects the performance of the disk. Larger disks have higher performance with baseline Input-Output Operations per second (IOPS) of 10 IOPS for each GB. etcd relies on writing data to disk to maintain its consensus algorithm, so exceeding your IOPS deployment's limits can cause cluster instability. Scaling your deployment's disk resources increases the IOPS available to your deployment.
+{{site.data.keyword.databases-for-etcd}} deployments over-allocate space because disk allocation affects the performance of the disk. Larger disks have higher performance with baseline input/output operations per second (IOPS) of 10 IOPS for each GB. etcd relies on writing data to disk to maintain its consensus algorithm, so exceeding your IOPS deployment's limits can cause cluster instability. Scaling your deployment's disk resources increases the IOPS available to your deployment.
 
 ## Memory Usage
 

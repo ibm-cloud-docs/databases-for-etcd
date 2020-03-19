@@ -1,12 +1,12 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="databases-for-etcd" audience="service" category="databases" href="/docs/databases-for-etcd?topic=databases-for-etcd-getting-started" path="databases-for-etcd"}
+{: .toc subcollection="databases-for-etcd" audience="service" category="databases" href="/docs/databases-for-etcd?topic=databases-for-etcd-getting-started" console-page="/catalog/services/databases-for-etcd" product-page="https://www.ibm.com/cloud/databases-for-etcd" path="databases-for-etcd"}
 Databases For etcd
 
 	{: .navgroup id="learn"}
 	getting-started.md
-	[What is Databases for etcd?](https://www.ibm.com/cloud/databases-for-etcd)
+	[What is etcd?](https://www.ibm.com/cloud/learn/etcd)
 	learn-dashboard-overview.md
 	learn-high-availability.md
 	learn-performance.md
