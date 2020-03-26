@@ -26,7 +26,7 @@ To access Sysdig from your deployment, use the _Monitoring_ link from the right 
 
 ![The Monitoring link in a deployment](images/monitoring-ui-link.png)
 
-To access your deployment's Sysdig dashboard from Sysdig, it'sc in the sidebar, under _IBM_.
+To access your deployment's Sysdig dashboard from Sysdig, it's in the sidebar, under _IBM_.
 
 ![Cloud databases dashboard in Sysdig](images/monitoring-ibm-list.png)
 
@@ -41,7 +41,7 @@ If you have deployments that are in a Single-zone Region (SZR) - `osl01`, `che01
 
 | Metric Name |
 |-----------|
-| [IO utilization as a percent -  5 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_5m) |
+| [IO utilization as a percent - 5 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_5m) |
 | [IO utilization as a percent - 15 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_15m) | 
 | [IO utilization as a percent - 30 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_30m) |  
 | [IO utilization as a percent - 60 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_60m) | 
