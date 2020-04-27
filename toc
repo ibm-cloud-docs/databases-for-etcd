@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="databases-for-etcd" audience="service" category="databases" href="/docs/databases-for-etcd?topic=databases-for-etcd-getting-started" console-page="/catalog/services/databases-for-etcd" product-page="https://www.ibm.com/cloud/databases-for-etcd" path="databases-for-etcd"}
+{: .toc subcollection="databases-for-etcd" audience="service" category="databases" href="/docs/databases-for-etcd?topic=databases-for-etcd-getting-started" console-page="/catalog/databases-for-etcd" product-page="https://www.ibm.com/cloud/databases-for-etcd" path="databases-for-etcd"}
 Databases For etcd
 
 	{: .navgroup id="learn"}

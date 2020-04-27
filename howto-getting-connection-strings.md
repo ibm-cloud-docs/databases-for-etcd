@@ -26,7 +26,7 @@ In order to connect to {{site.data.keyword.databases-for-etcd_full}}, you need s
 
 You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections) and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026). 
 
-A {{site.data.keyword.databases-for-etcd}} deployment is provisioned with a root user, and after you [set the root password](/docs/services/databases-for-etcd?topic=databases-for-etcd-root-password), you can use its connection strings to connect to your deployment.
+A {{site.data.keyword.databases-for-etcd}} deployment is provisioned with a root user, and after you [set the root password](/docs/databases-for-etcd?topic=databases-for-etcd-root-password), you can use its connection strings to connect to your deployment.
 {: .tip}
 
 ## Additional Users and Connection Strings
@@ -35,7 +35,7 @@ Access to your {{site.data.keyword.databases-for-etcd}} deployment is not limite
 
 All users on your deployment can use the connection strings, including connection strings for either public or private endpoints.
 
-When you create a user, it is assigned certain database roles and privileges. These privileges include the ability to login and read/write access to the entire keyspace. For more information, see the [Managing Users and Roles](/docs/services/databases-for-etcd?topic=databases-for-etcd-user-management) page.
+When you create a user, it is assigned certain database roles and privileges. These privileges include the ability to login and read/write access to the entire keyspace. For more information, see the [Managing Users and Roles](/docs/databases-for-etcd?topic=databases-for-etcd-user-management) page.
 
 ### Creating Users and Getting Connection Strings in _Service Credentials_
 

@@ -24,9 +24,9 @@ This tutorial is a short introduction to using an {{site.data.keyword.databases-
 
 - You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){:new_window}.
 
-- And a {{site.data.keyword.databases-for-etcd}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/databases-for-etcd). Give your deployment a memorable name that appears in your account's Resource List.
+- And a {{site.data.keyword.databases-for-etcd}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/databases-for-etcd). Give your deployment a memorable name that appears in your account's Resource List.
 
-- [Set the Root Password](/docs/services/databases-for-etcd?topic=databases-for-etcd-root-password) for your deployment.
+- [Set the Root Password](/docs/databases-for-etcd?topic=databases-for-etcd-root-password) for your deployment.
 
 ## Connecting with `etcdctl`
 
@@ -183,9 +183,9 @@ The connection is left open, and continues to watch that key for subsequent chan
 If you are just using etcd for the first time, it is a good idea to take a tour through the [etcd documentation](https://etcd.io/docs/v3.3.12/). 
 
 If you are planning to use {{site.data.keyword.databases-for-etcd}} for your applications, check out some of our other documentation pages.
-- [Connecting an external application](/docs/services/databases-for-etcd?topic=databases-for-etcd-external-app)
-- [Connecting an IBM Cloud application](/docs/services/databases-for-etcd?topic=databases-for-etcd-ibmcloud-app)
+- [Connecting an external application](/docs/databases-for-etcd?topic=databases-for-etcd-external-app)
+- [Connecting an IBM Cloud application](/docs/databases-for-etcd?topic=databases-for-etcd-ibmcloud-app)
 
 Also, to ensure the stability of your applications and your database, check out the pages on 
-- [High-Availability](/docs/services/databases-for-etcd?topic=databases-for-etcd-high-availability)
-- [Performance](/docs/services/databases-for-etcd?topic=databases-for-etcd-performance)
+- [High-Availability](/docs/databases-for-etcd?topic=databases-for-etcd-high-availability)
+- [Performance](/docs/databases-for-etcd?topic=databases-for-etcd-performance)
