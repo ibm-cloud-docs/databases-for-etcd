@@ -31,7 +31,7 @@ The `etcdctl` binary is available in the etcd distribution, which can be downloa
 
 ## Connecting
 
-Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
 Any user on your deployment is able to connect using `etcdctl`, but the [root user](/docs/databases-for-etcd?topic=databases-for-etcd-user-management#the-root-user) does have more permissions on the cluster.
 {: .tip}
@@ -68,7 +68,7 @@ More example commands are in the [etcd documentation](https://github.com/etcd-io
 
 ## Starting `etcdctl` from the IBM Cloud CLI
 
-If you have both `etcdctl` and the [{{site.data.keyword.databases-for}} CLI Plug-in](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference) installed, the `ibmcloud cdb deployment-connections` command can handle creating the connection. For example, to connect to a deployment named  "example-etcd" with an "example-user", use the following command.
+If you have both `etcdctl` and the [{{site.data.keyword.databases-for}} CLI Plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) installed, the `ibmcloud cdb deployment-connections` command can handle creating the connection. For example, to connect to a deployment named  "example-etcd" with an "example-user", use the following command.
 
 ```
 ibmcloud cdb deployment-connections -u example-user example-etcd --start

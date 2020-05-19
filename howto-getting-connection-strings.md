@@ -24,7 +24,7 @@ In order to connect to {{site.data.keyword.databases-for-etcd_full}}, you need s
 
 ![Connections panel on the Dashboard Overview](images/connections_panel.png)
 
-You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-connections) and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026). 
+You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections) and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026). 
 
 A {{site.data.keyword.databases-for-etcd}} deployment is provisioned with a root user, and after you [set the root password](/docs/databases-for-etcd?topic=databases-for-etcd-root-password), you can use its connection strings to connect to your deployment.
 {: .tip}

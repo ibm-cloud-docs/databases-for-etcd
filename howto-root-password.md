@@ -27,7 +27,7 @@ You have to set the root password before you can use it to connect. To set the p
 
 ## Setting the root password from the command line
 
-Use the `cdb user-password` command from the [{{site.data.keyword.databases-for}} CLI Plug-in](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference) to set the root password with the command line.
+Use the `cdb user-password` command from the [{{site.data.keyword.databases-for}} CLI Plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) to set the root password with the command line.
 
 For example, to set the root password for a deployment named "example-deployment", use the following command.
 ```
