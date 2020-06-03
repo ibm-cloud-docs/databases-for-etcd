@@ -33,8 +33,11 @@ Databases For etcd
 
 	/cloud-databases/cloud-databases-dashboard-backups
 	/cloud-databases/cloud-databases-whitelisting
-	/cloud-databases/cloud-databases-tutorial-k8s-app
-	/cloud-databases/cloud-databases-tutorial-cf-app
+	
+	{: .topicgroup}
+	Tutorials
+		/cloud-databases/cloud-databases-tutorial-k8s-app
+		/cloud-databases/cloud-databases-tutorial-cf-app
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
