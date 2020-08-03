@@ -32,7 +32,7 @@ Databases For etcd
 		howto-autoscaling.md
 
 	/cloud-databases/cloud-databases-dashboard-backups
-	/cloud-databases/cloud-databases-whitelisting
+	/cloud-databases/cloud-databases-allowlisting
 	
 	{: .topicgroup}
 	Tutorials
