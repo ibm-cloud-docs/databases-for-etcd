@@ -35,5 +35,5 @@ Several minutes of database unavailability or connection interruptions are not e
 
 ## High availability, disaster recovery, and SLA resources
 
-{{site.data.keyword.databases-for-etcd}} deployments conform to the {{site.data.keyword.cloud_notm}} Databases [HA, DR, and SLA](/cloud-databases/cloud-databases-ha-dr) information and terms.
+{{site.data.keyword.databases-for-etcd}} deployments conform to the {{site.data.keyword.cloud_notm}} Databases [HA, DR, and SLA](/docs/cloud-databases?topic=cloud-databases-ha-dr) information and terms.
 
