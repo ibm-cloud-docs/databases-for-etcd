@@ -20,9 +20,9 @@ subcollection: databases-for-etcd
 # Creating Users and Getting Connection Strings
 {: #connection-strings}
 
-In order to connect to {{site.data.keyword.databases-for-etcd_full}}, you need some users and connection strings. Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Connections_ panel. 
+In order to connect to {{site.data.keyword.databases-for-etcd_full}}, you need some users and connection strings. Connection Strings for your deployment are displayed on the _Dashboard Overview_, in the _Endpoints_ panel. 
 
-![Connections panel on the Dashboard Overview](images/connections_panel.png)
+![Endpoints panel](images/getting-started-endpoints-panel.png)
 
 You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections) and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026). 
 

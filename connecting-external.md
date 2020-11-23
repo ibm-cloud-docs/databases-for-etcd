@@ -18,7 +18,7 @@ subcollection: databases-for-etcd
 # Connecting an external application
 {: #external-app}
 
-Each {{site.data.keyword.databases-for-etcd_full}} deployment has connection strings specifically for drivers and applications. Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+Each {{site.data.keyword.databases-for-etcd_full}} deployment has connection strings specifically for drivers and applications. Connection strings are displayed in the _Endpoints_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
 The connection strings can be used by any of the users on your deployment. While you can use the root user for all of your connections and applications, it might be better to generate users specifically for your applications to connect with. Documentation on creating users is on the [Creating Users and Getting Connection Strings](/docs/databases-for-etcd?topic=databases-for-etcd-connection-strings) page.
 
@@ -79,7 +79,7 @@ All connections to {{site.data.keyword.databases-for-etcd}} are TLS 1.2 enabled,
 
 ### Using the self-signed certificate
 
-1. Copy the certificate information from the _Connections_ panel or the Base64 field of the connection information. 
+1. Copy the certificate information from the _Endpoints_ panel or the Base64 field of the connection information. 
 2. If needed, decode the Base64 string into text. 
 3. Save the certificate  to a file. (You can use the Name that is provided or your own file name).
 4. Provide the path to the certificate to the driver or client.

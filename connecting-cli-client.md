@@ -31,7 +31,9 @@ The `etcdctl` binary is available in the etcd distribution, which can be downloa
 
 ## Connecting
 
-Connection strings are displayed in the _Connections_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+Connection strings are displayed in the _Endpoints_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+
+![CLI Endpoints panel](images/cli-endpoints-pane.png)
 
 Any user on your deployment is able to connect using `etcdctl`, but the [root user](/docs/databases-for-etcd?topic=databases-for-etcd-user-management#the-root-user) does have more permissions on the cluster.
 {: .tip}

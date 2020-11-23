@@ -30,11 +30,11 @@ This tutorial is a short introduction to using an {{site.data.keyword.databases-
 
 ## Connecting with `etcdctl`
 
-Download and install `etcdctl`, which you can get from [the coreos/etcd repository](https://github.com/coreos/etcd/releases/latest). Once it is installed, you can get the formatted connection strings from the deployment's _Dashboard Overview_, in the _Connections_ panel. The _CLI_ tab contains information that a CLI client uses to make a connection to your deployment.
+Download and install `etcdctl`, which you can get from [the coreos/etcd repository](https://github.com/coreos/etcd/releases/latest). Once it is installed, you can get the formatted connection strings from the deployment's _Dashboard Overview_, in the _Endpoints_ panel. The _CLI_ tab contains information that a CLI client uses to make a connection to your deployment.
 
-![The CLI Connections Panel](images/getting-started-connection-cli.png)
+![Endpoints panel](images/getting-started-endpoints-panel.png)
 
-First, save the _contents_ of the TLS certificate to a file and name the file with the TLS certificate _name_. Either save it to the location where you plan on running the `etcdctl` commands or remember where the file is saved so you can provide its full path to the environment variable.
+First, download (or save the _contents_ of) the TLS certificate to a file and name the file with the TLS certificate _name_. Either save it to the location where you plan on running the `etcdctl` commands or remember where the file is saved so you can provide its full path to the environment variable.
 
 Then, use the values in the _Environment_ and _Arguments_ fields to set up your environment so `etcdctl` can connect and issue commands on your deployment.
 ```
