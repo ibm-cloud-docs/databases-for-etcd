@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019
-lastupdated: "2019-09-17"
+  years: 2019, 2021
+lastupdated: "2021-02-02"
 
 subcollection: databases-for-etcd
 
@@ -27,6 +27,8 @@ This tutorial is a short introduction to using an {{site.data.keyword.databases-
 - And a {{site.data.keyword.databases-for-etcd}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/databases-for-etcd). Give your deployment a memorable name that appears in your account's Resource List.
 
 - [Set the Root Password](/docs/databases-for-etcd?topic=databases-for-etcd-root-password) for your deployment.
+
+Review the [`Getting to production`](/docs/cloud-databases?topic=cloud-databases-best-practices) documentation for general guidance on setting up a basic {{site.data.keyword.databases-for-etcd_full}} deployment.
 
 ## Connecting with `etcdctl`
 
