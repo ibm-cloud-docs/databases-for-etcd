@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-02-04"
+  years: 2017,2018
+lastupdated: "2018-11-08"
 
 keywords: etcd, root password
 
@@ -21,9 +21,9 @@ subcollection: databases-for-etcd
 
 The {{site.data.keyword.databases-for-etcd_full}} service is provisioned with a root user.
 
-You have to set the root password before you can use it to connect. To set the password through the {{site.data.keyword.cloud_notm}} dashboard, select _Manage_ from the service dashboard to open the management panel for your service. Open the _Settings_ tab, and use the _Change Database Admin Password_ panel to set a new root password.
+You have to set the root password before you can use it to connect. To set the password through the {{site.data.keyword.cloud_notm}} dashboard, select _Manage_ from the service dashboard to open the management panel for your service. Open the _Settings_ tab, and use the _Change Password_ panel to set a new root password.
 
-![The Chnage Database Admin Password Panel in _Settings_](images/settings-admin-password.png)
+![The Root Passwor Panel in _Settings_](images/settings-root-password.png)
 
 ## Setting the root password from the command line
 

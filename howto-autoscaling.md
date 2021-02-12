@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  years: 2020, 2021
-lastupdated: "2021-02-04"
+  years: 2020
+lastupdated: "2020-01-02"
 
 keywords: etcd, databases, scaling, autoscaling, memory, disk I/O
 
