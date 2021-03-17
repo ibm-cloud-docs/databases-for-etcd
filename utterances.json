@@ -1,14 +1,14 @@
 {
     "troubleshoot-connect": [
         "How do I connect to my Etcd deployment?",
-        "cannot connect to my Postgres instance",
+        "cannot connect to my Etcd DB instance",
         "can't connect to Etcd database",
         "error connecting to Etcd deployment ",
-        "issue connecting to PostgeSQL Via Command line",
+        "issue connecting to Etcd Via Command line",
         "problem connecting to my Etcd production db",
         "errors connecting external application to Etcd database ",
         "application recieving timeouts when connecting to Etcd Database",
-        "external application logging Intermittent connection timeouts to ICD postgres Deployment",
+        "external application logging Intermittent connection timeouts to ICD Etcd Deployment",
         "error when connecting External app to Databases for Etcd",
         "Etcd Database will not connect to my external application ",
         "VMware vSphere VMs unable to connect to Etcd",
