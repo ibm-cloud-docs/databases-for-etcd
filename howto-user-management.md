@@ -20,7 +20,7 @@ subcollection: databases-for-etcd
 # Managing Users and Roles
 {: #user-management}
 
-{{site.data.keyword.databases-for-etcd_full}} deployments come with authentication enabled and use etcd's [built-in access control](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/authentication.md). 
+{{site.data.keyword.databases-for-etcd_full}} deployments come with authentication enabled and use etcd's [built-in access control](https://etcd.io/docs/v3.4.0/op-guide/authentication/). 
 
 While technically possible - turning off etcd authentication is **NOT** a good idea and highly discouraged. {{site.data.keyword.databases-for-etcd}} automatically fixes any deployments where etcd authentication has been deliberately turned off.
 {: .tip}
@@ -29,7 +29,7 @@ When you provision a new deployment in {{site.data.keyword.cloud_notm}}, you are
 
 ## The root user
 
-The [etcd root user](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/authentication.md#special-users-and-roles) is intended for use as an administrative user. It is granted the root role, which gives read/write access to the entire keyspace, cluster operations, and privileges to create, modify, and delete other roles and users on your deployment.
+The [etcd root user](https://etcd.io/docs/v3.4.0/op-guide/authentication/#special-users-and-roles) is intended for use as an administrative user. It is granted the root role, which gives read/write access to the entire keyspace, cluster operations, and privileges to create, modify, and delete other roles and users on your deployment.
 
 ## etcd roles
 
@@ -38,7 +38,7 @@ etcd uses a system of roles to manage database and key access. Roles are used to
 ETCDCTL_API=3 etcdctl --cacert=c5f07736-d94c-11e8-a2e9-62ec2ed68f84 --endpoints=https://35dae549-2275-4d3e-baed-d86f36022336.974550db65eb4ec0983f023940bf637f.databases.appdomain.cloud:32460 --user=root:$PASSWORD role list
 ```
 
-You can also create roles that grant read access, write access, or both to specific keys or ranges of keys. Refer to the etcd documentation for [commands to manage roles](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/authentication.md#working-with-roles).
+You can also create roles that grant read access, write access, or both to specific keys or ranges of keys. Refer to the etcd documentation for [commands to manage roles](https://etcd.io/docs/v3.4.0/op-guide/authentication/#working-with-roles).
 
 Once you have created a role, you can assign it to a user. You can list the users on your deployment with
 ```
@@ -59,7 +59,7 @@ Users that are created directly from the API and CLI do not appear in _Service C
 
 ## Users created in etcd
 
-You can bypass creating users in _Service Credentials_, the CLI, the API, and [create users directly in etcd](https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/authentication.md#working-with-users). 
+You can bypass creating users in _Service Credentials_, the CLI, the API, and [create users directly in etcd](https://etcd.io/docs/v3.4.0/op-guide/authentication/#working-with-users). 
 
 Users created directly in etcd do not appear in _Service Credentials_, but you can [add them there](/docs/databases-for-etcd?topic=databases-for-etcd-connection-strings#adding-users-to-_service-credentials_)) if you choose.
 

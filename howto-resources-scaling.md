@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  years: 2019, 2020
-lastupdated: "2020-01-27"
+  years: 2019, 2021
+lastupdated: "2021-03-30"
 
 keywords: etcd, manual scaling, memory, disk I/O, CPU
 
@@ -31,7 +31,7 @@ Billing is based on the _total_ amount of resources that are allocated to the se
 
 ### Disk Usage
 
-Storage shows the amount of disk space that is allocated to your service. Each member gets an equal share of the allocated space. Disk allocation affects the performance of the disk, with larger disks having higher performance. Baseline Input-Output Operations per second (IOPS) performance for disk is 10 IOPS for each GB. Due to the etcd [8 GB storage limit](https://github.com/etcd-io/etcd/blob/master/Documentation/dev-guide/limit.md), scaling disk space increases only the the IOPS your deployment can handle.
+Storage shows the amount of disk space that is allocated to your service. Each member gets an equal share of the allocated space. Disk allocation affects the performance of the disk, with larger disks having higher performance. Baseline Input-Output Operations per second (IOPS) performance for disk is 10 IOPS for each GB. Due to the etcd [8 GB storage limit](https://etcd.io/docs/v3.4.0/dev-guide/limit/), scaling disk space increases only the the IOPS your deployment can handle.
 
 You cannot scale down storage. You can recover space by backing up and restoring to a new deployment.
 {: .tip} 
@@ -54,7 +54,7 @@ You can enable or increase the CPU allocation to the deployment. With dedicated 
 
 - A few scaling operations can be more long running than others. Enabling dedicated cores moves your deployment to its own host and can take longer than just adding more cores. Similarly, drastically increasing CPU, RAM, or Disk can take longer than smaller increases to account for provisioning more underlying hardware resources.
 
-- Scaling operations are logged in [Activity Tracker](/docs/databases-for-etcd?topic=cloud-databases-activity-tracker).
+- Scaling operations are logged in [{{site.data.keyword.at_full}}](/docs/databases-for-etcd?topic=cloud-databases-activity-tracker).
 
 - If you find consistent trends in resource usage or would like to set up scaling when certain resource thresholds are reached, checkout enabling [autoscaling](/docs/databases-for-etcd?topic=databases-for-etcd-autoscaling) on your deployment.
 
@@ -62,7 +62,7 @@ You can enable or increase the CPU allocation to the deployment. With dedicated 
 
 A visual representation of your data members and their resource allocation is available on the _Resources_ tab of your deployment's _Manage_ page. 
 
-![The Scale Resources Panel in _Settings_](images/settings-scaling.png)
+![The Scale Resources Panel in _Resources_](images/settings-scaling.png)
 
 Adjust the slider to increase or decrease the resources that are allocated to your service. The slider controls how much memory or disk is allocated per member. The UI currently uses a coarser-grained resolution of 8 GB increments for disk and 1 GB increments for memory. The UI shows the total allocated memory or disk for the position of the slider. Click **Scale** to trigger the scaling operations and return to the dashboard overview. 
 

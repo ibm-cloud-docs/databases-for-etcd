@@ -31,11 +31,11 @@ The `etcdctl` binary is available in the etcd distribution, which can be downloa
 
 ## Connecting
 
-Connection strings are displayed in the _Endpoints_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+Connection strings are displayed in the _Endpoints_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
-![CLI Endpoints panel](images/cli-endpoints-pane.png)
+![CLI Endpoints page](images/cli-endpoints-pane.png)
 
-Any user on your deployment is able to connect using `etcdctl`, but the [root user](/docs/databases-for-etcd?topic=databases-for-etcd-user-management#the-root-user) does have more permissions on the cluster.
+Any user on your deployment is able to connect by using `etcdctl`, but the [root user](/docs/databases-for-etcd?topic=databases-for-etcd-user-management#the-root-user) does have more permissions on the cluster.
 {: .tip}
 
 The information `etcdctl` needs to make a connection to your deployment is in the "cli" section of your [connection strings](/docs/databases-for-etcd?topic=databases-for-etcd-connection-strings). The table contains a breakdown for reference.
@@ -44,7 +44,7 @@ Field Name|Index|Description
 ----------|-----|-----------
 `Bin`||The recommended binary to create a connection; in this case it is `etcdctl`.
 `Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command-line parameters.
-`Environment`||A list of key/values you set as environment variables.
+`Environment`||A list of key or values you set as environment variables.
 `Arguments`|0...|The information that is passed as arguments to the command shown in the Bin field.
 `Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
 `Certificate`|Name|The allocated name for the self-signed certificate.
@@ -61,16 +61,16 @@ ETCDCTL_API=3 etcdctl --endpoints=http://afe6f1d5-60d5-447e-a96a-66f555ecc277.8f
 
 * `ETCDCTL_API=3` - Sets the API version environment variable for the `etcdctl` command. The binary for `etcdctl` uses version 2 by default, which is not supported on your deployment. Setting this environment variable overrides the default. If you are only using `etcdctl` to talk to etcd v3 deployments, you might want to set this variable more permanently in your shell environment.
 * `etcdctl` - The command itself. 
-* `--endpoints=...` - The parameter that specifies the endpoints where the `etcdctl` command connects. It's composed of HTTPS protocol URLs and includes a port number. 
-* `--user=...` - The parameter for the username and password, separated by a colon, to be used as credentials to log in to the etcd deployment. 
+* `--endpoints=...` - The parameter that specifies the endpoints where the `etcdctl` command connects. It is composed of HTTPS protocol URLs and includes a port number. 
+* `--user=...` - The parameter for the username and password, which is separated by a colon, to be used as credentials to log in to the etcd deployment. 
 * `member list` - An etcdctl command to list the database members of the etcd deployment. Without any other parameters, the result is produced as a list comma separated values.
 * `-w table` - A modifier for the output of `member list`, which reformats it as a table with headings.
 
-More example commands are in the [etcd documentation](https://github.com/etcd-io/etcd/blob/master/Documentation/dev-guide/interacting_v3.md).
+More example commands are in the [etcd documentation](https://etcd.io/docs/v3.4.0/dev-guide/interacting_v3/).
 
 ## Starting `etcdctl` from the IBM Cloud CLI
 
-If you have both `etcdctl` and the [{{site.data.keyword.databases-for}} CLI Plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) installed, the `ibmcloud cdb deployment-connections` command can handle creating the connection. For example, to connect to a deployment named  "example-etcd" with an "example-user", use the following command.
+If you have both `etcdctl` and the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) installed, the `ibmcloud cdb deployment-connections` command can handle creating the connection. For example, to connect to a deployment named "example-etcd" with an "example-user", use the following command.
 
 ```
 ibmcloud cdb deployment-connections -u example-user example-etcd --start
