@@ -3,7 +3,7 @@ copyright:
   years: 2020, 2021
 lastupdated: "2021-03-24"
 
-keywords: etcd, sysdig, monitoring, metrics, iops, disk usage, memory usage
+keywords: etcd, monitoring, metrics, iops, disk usage, memory usage
 
 subcollection: databases-for-etcd
 
@@ -18,7 +18,7 @@ subcollection: databases-for-etcd
 {:important: .important}
 
 # Monitoring Integration
-{: #sysdig-monitoring}
+{: #monitoring}
 
 Monitoring for {{site.data.keyword.databases-for-etcd_full}} deployments is provided through integration with the {{site.data.keyword.monitoringfull}} service. Your deployments forward selected information so you can monitor deployment health and resource usage. To see your {{site.data.keyword.databases-for-etcd}} dashboards in {{site.data.keyword.monitoringfull_notm}}, you must [Enable Platform Metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_enabling) in the same region as your deployment. If you have deployments in more than one region, you must provision monitoring and enable platform metrics in each region.
 

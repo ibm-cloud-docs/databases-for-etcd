@@ -25,7 +25,7 @@ subcollection: databases-for-etcd
 
 ## Monitoring your deployment
 
-{{site.data.keyword.databases-for-etcd}} deployments offer an integration with the [{{site.data.keyword.monitoringfull}} service](/docs/databases-for-etcd?topic=databases-for-etcd-sysdig-monitoring) for basic monitoring of resource usage on your deployment. Many of the available metrics, like disk usage and IOPS, are presented to help you configure [autoscaling](/docs/databases-for-etcd?topic=databases-for-etcd-autoscaling) on your deployment. Observing trends in your usage and configuring the autoscaling to respond to them can help alleviate performance problems before your databases become unstable due to resource exhaustion.
+{{site.data.keyword.databases-for-etcd}} deployments offer an integration with the [{{site.data.keyword.monitoringfull}} service](/docs/databases-for-etcd?topic=databases-for-etcd-monitoring) for basic monitoring of resource usage on your deployment. Many of the available metrics, like disk usage and IOPS, are presented to help you configure [autoscaling](/docs/databases-for-etcd?topic=databases-for-etcd-autoscaling) on your deployment. Observing trends in your usage and configuring the autoscaling to respond to them can help alleviate performance problems before your databases become unstable due to resource exhaustion.
 
 ## Storage Limits and Disk IOPS
 
