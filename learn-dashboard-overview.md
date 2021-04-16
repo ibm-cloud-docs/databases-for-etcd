@@ -17,7 +17,7 @@ subcollection: databases-for-etcd
 {:pre: .pre}
 {:tip: .tip}
 
-# The UI - Dashboard Overview
+# The Dashboard Overview
 {: #dashboard-overview}
 
 The _Overview_ page shows you information about your {{site.data.keyword.databases-for-etcd_full}} deployment. The overview includes essential identifying information.
