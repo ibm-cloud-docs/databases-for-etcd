@@ -125,7 +125,7 @@ Begin by configuring IAM Authorizations:
 - Choose the **Authorizations** tab from the lefthand menu.
 - Click the **create** button to create an authorization that will allow a service instance access to another service instance.
 -The source service is the service that is granted access to the target service. The roles you select define the level of access for this service. The target service is the service you are granting permission to be accessed by the source service based on the assigned roles.
-- In the **Source Service** field, select **Databases for <cloud database>**.
+- In the **Source Service** field, select **Databases for etcd**.
 - In the **Target Service** field, select **Satellite**.
 - Select all options:
     - **Satellite Cluster Creator**
@@ -137,7 +137,7 @@ Begin by configuring IAM Authorizations:
 {: #cd-satellite-provision}
 
 When you create a new database service instance, a service cluster will first be deployed into your Satellite location. This service cluster step requires you to have prepared the Satellite location properly (see Step 2 above).
-Once you have prepared your satellite location and granted service authorization, you will need to provision your ICD Satellite Deployment by selecting the Satellite location you have created. For thorough documentation of the provisioning process, see the relevant provisioning documentation for your ICD Satellite deployment. For example, for PostgreSQL, refer to [Provisioning](/docs/databases-for-postgresql?topic=cloud-databases-provisioning) here.
+Once you have prepared your satellite location and granted service authorization, you will need to provision your ICD Satellite Deployment by selecting the Satellite location you have created. For thorough documentation of the provisioning process, see the relevant provisioning documentation for your ICD Satellite deployment. For example, for etcd, refer to [Provisioning](/docs/databases-for-etcd?topic=cloud-databases-provisioning) here.
 
 Deployment of the first service cluster can take up to one hour. Once the service cluster is created, you must create a storage assignment manually **before** the database instance will be started. Subsequent clusters will provision more quickly.
 {: .important}
