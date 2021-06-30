@@ -17,6 +17,7 @@ Databases For etcd
 
 	{: .navgroup id="howto"}
 	/cloud-databases/cloud-databases-provisioning
+	howto-sat-location.md
 	howto-root-password.md
 	howto-getting-connection-strings.md
 	howto-user-management.md
