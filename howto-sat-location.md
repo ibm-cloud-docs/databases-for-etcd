@@ -132,7 +132,7 @@ Begin by configuring IAM Authorizations:
 ## Step 3: Provisioning ICD Satellite Deployment
 {: #cd-satellite-provision}
 
-Once you have prepared your satellite location and granted service authorization, you can provision your ICD Satellite Deployment by selecting the Satellite location you have created in the **Location** dropdown of the provisioning page.  For thorough documentation of the provisioning process, see the relevant provisioning documentation for your ICD Satellite deployment. For example, for PostgreSQL, refer to [Provisioning](/docs/databases-for-etcd?topic=cloud-databases-provisioning) here. Once you have created a new service instance, this instance will appear in the IBM Cloud `Resource List` as `Provisioned`.
+Once you have prepared your satellite location and granted service authorization, you can provision your ICD Satellite Deployment by selecting the Satellite location you have created in the **Location** dropdown of the provisioning page.  For thorough documentation of the provisioning process, see the relevant provisioning documentation for your ICD Satellite deployment. For example, for etcd, refer to [Provisioning](/docs/databases-for-etcd?topic=cloud-databases-provisioning) here. Once you have created a new service instance, this instance will appear in the IBM Cloud `Resource List` as `Provisioned`.
 
 When you deploy the first database service instance, a service cluster will automatically be deployed into your Satellite location. The deployment of the service cluster can take up to one hour.
 
