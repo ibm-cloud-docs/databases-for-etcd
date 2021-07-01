@@ -9,7 +9,7 @@ keywords: IBM Cloud, databases, Satellite, ICD, get started
 subcollection: databases-for-etcd
 
 content-type: tutorial
-services: databases-for-postgresql
+services: databases-for-etcd
 completion-time: 15m
 
 ---
