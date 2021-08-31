@@ -16,8 +16,13 @@ Databases For etcd
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
+	{: .topicgroup}
+	IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
+		/cloud-databases/cloud-databases-satellite-get-started
+		/cloud-databases/cloud-databases-satellite-aws
+		/cloud-databases/cloud-databases-satellite-on-prem
+		
 	/cloud-databases/cloud-databases-provisioning
-	/cloud-databases/cloud-databases-satellite
 	howto-root-password.md
 	howto-getting-connection-strings.md
 	howto-user-management.md
