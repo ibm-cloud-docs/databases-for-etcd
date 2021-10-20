@@ -41,6 +41,8 @@ All prices here are in US dollars. To see pricing in your local currency, you ca
 
 ## Using the Pricing Calculator
 
+Templates are provided for ease of use and provide balanced resource allocations appropriate for general purpose workloads. The **Custom** tab can be used to configure Disk, RAM, and vCPU, as desired.
+
 For pricing estimation, use the **Add to Estimate** button at the bottom of the [{{site.data.keyword.databases-for-etcd}} catalog page](https://cloud.ibm.com/catalog/databases-for-etcd). Input your total consumption across two data members into the calculator. For example, 20 GB of disk and 1 GB of RAM across three data members would be priced at 60 GB of disk and 3 GB of RAM respectively.
 
 ![Pricing calculator estimation with 20 GB of disk and 1 GB of RAM, per member](images/pricing-calc.png)
