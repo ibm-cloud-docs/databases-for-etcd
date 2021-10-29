@@ -39,6 +39,17 @@ Total per hour = $.068/Hour
 All prices here are in US dollars. To see pricing in your local currency, you can to use the pricing calculator.
 {: .tip}
 
+## IBM Cloud Databases enabled by IBM Cloud Satellite Pricing
+
+{{site.data.keyword.databases-for-etcd}} deployments are deployable into IBM Cloud Satellite locations. The management fee for these Cloud Databases is $45 per vCPU per month, with a 6 vCPU minimum.
+
+Resources | Breakdown | Price
+-------|-------|-------
+6 vCPUs per month | 2 members x 6 GB x $45 | $540
+{: caption="Table 2. Pricing example for  6 vCPUs and two data members" caption-side="top"}
+
+Total per month = $49.80/Month
+
 ## Using the Pricing Calculator
 
 Templates are provided for ease of use and provide balanced resource allocations appropriate for general purpose workloads. The **Custom** tab can be used to configure Disk, RAM, and vCPU, as desired.
