@@ -41,6 +41,7 @@ toc:
       - howto-getting-connection-strings.md
       - howto-user-management.md
       - /cloud-databases/cloud-databases-deprovisioning
+      - /cloud-databases/cloud-databases-migrate-data-center
       - /cloud-databases/cloud-databases-ha-dr
       - topicgroup: 
           label: Connecting to Databases for etcd
