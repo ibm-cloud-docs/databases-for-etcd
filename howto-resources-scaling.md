@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2019, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-11-30"
 
 keywords: etcd, manual scaling, memory, disk I/O, CPU
 
@@ -46,7 +46,7 @@ You can enable or increase the CPU allocation to the deployment. With dedicated 
 
 ## Scaling Considerations
 
-- Scaling your deployment up might cause your databases to restart. If you scale RAM or CPU and your deployment needs to be moved to a host with more capacity, then the databases are restarted as part of the move.
+- Scaling your deployment up might cause your databases to restart. If your scaled deployment needs to be moved to a host with more capacity, then the databases are restarted as part of the move.
 
 - Scaling down RAM or CPU does not trigger database restarts.
 
