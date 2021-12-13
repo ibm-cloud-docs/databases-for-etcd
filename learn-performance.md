@@ -1,6 +1,6 @@
 ---
 
-Copyright:
+copyright:
   years: 2018, 20201
 lastupdated: "2021-03-30"
 
@@ -10,7 +10,7 @@ subcollection: databases-for-etcd
 
 ---
 
-{:new_window: target="_blank"}
+{:external: .external target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
