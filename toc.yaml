@@ -5,6 +5,7 @@
 toc:
   properties:
     subcollection: databases-for-etcd
+    service-name: databases-for-etcd-group
     version: 2
     category: database
     audience: service
@@ -27,6 +28,7 @@ toc:
       - learn-performance.md
       - learn-security-compliance.md
       - learn-pricing.md
+      - release-notes.md
   - navgroup: 
       id: howto
       topics:
