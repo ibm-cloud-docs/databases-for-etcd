@@ -1,7 +1,8 @@
 ---
+
 copyright:
-  years: 2019,2018
-lastupdated: "2021-10-29"
+  years: 2018, 2019
+lastupdated: "2022-03-21"
 
 keywords: etcd, application
 
@@ -23,6 +24,7 @@ Each {{site.data.keyword.databases-for-etcd_full}} deployment has connection str
 The connection strings can be used by any of the users on your deployment. While you can use the root user for all of your connections and applications, it might be better to generate users specifically for your applications to connect with. Documentation on creating users is on the [Creating Users and Getting Connection Strings](/docs/databases-for-etcd?topic=databases-for-etcd-connection-strings) page.
 
 ## Using Connection Information
+{: #using-conn-info}
 
 {{site.data.keyword.databases-for-etcd}} only supports the etcd v3 API and datastore. Access to the v2 API is disabled.
 {: .tip}
@@ -46,6 +48,7 @@ Field Name|Index|Description
 * `0...` indicates that there might be one or more of these entries in an array.
 
 ## Connecting with a Driver
+{: #connecting-with-driver}
 
 etcd drivers are often able to make a connection to your deployment when given the URI-formatted connection string found in the "composed" field of the connection information. For example, 
 ```shell
@@ -64,6 +67,7 @@ Python|`python-etcd`|[Link](https://python-etcd.readthedocs.io/en/latest/)
 {: caption="Table 2. Common etcd drivers" caption-side="top"}
 
 ## Connecting without a Driver
+{: #connecting-without-driver}
 
 For languages that do not have gRPC support etcd v3 provides a JSON gRPC gateway that translates HTTP/JSON requests into gRPC messages. For example, you can check the cluster health by using cURL.
 ```shell
@@ -71,19 +75,22 @@ curl https://35dae549-2275-4d3e-beed-d86f36022336.974550db55eb4ec0983f023940bf63
 -X POST -d '{"name": "ibm_cloud_59699685_b95e_4afe_9d39_7464c228563c", "password": "$PASSWORD"}'
 ```
 
-The `version` path parameter depends on the minor version of etcd running on your deployment. You can find the minor version on your [deployment's _Overview_ page](/docs/databases-for-etcd?topic=databases-for-etcd-dashboard-overview). If you are running etcd 3.2, use `v3alpha` in the endpoint. If you are running etcd 3.3, use `v3beta` in the endpoint. Version information and example commands are in the [etcd documentation](https://etcd.io/docs/v3.4.0/dev-guide/api_grpc_gateway/). Refer to the [etcd Swagger API definitions](https://github.com/etcd-io/etcd/blob/master/Documentation/dev-guide/apispec/swagger/rpc.swagger.json) for a full reference. 
+The `version` path parameter depends on the minor version of etcd running on your deployment. You can find the minor version on your [deployment's *Overview* page](/docs/databases-for-etcd?topic=databases-for-etcd-dashboard-overview). If you are running etcd 3.2, use `v3alpha` in the endpoint. If you are running etcd 3.3, use `v3beta` in the endpoint. Version information and example commands are in the [etcd documentation](https://etcd.io/docs/v3.4.0/dev-guide/api_grpc_gateway/). Refer to the [etcd Swagger API definitions](https://github.com/etcd-io/etcd/blob/master/Documentation/dev-guide/apispec/swagger/rpc.swagger.json) for a full reference. 
 
 ## TLS and self-signed certificate support
+{: #tls-ssc-support}
 
 All connections to {{site.data.keyword.databases-for-etcd}} are TLS 1.2 enabled, so the method you use to connect needs to be able to support encryption. Your deployment also comes with a self-signed certificate to verify the server upon connection. 
 
 ### Using the self-signed certificate
+{: #using-ssc}
 
-1. Copy the certificate information from the _Endpoints_ panel or the Base64 field of the connection information. 
+1. Copy the certificate information from the *Endpoints* panel or the Base64 field of the connection information. 
 2. If needed, decode the Base64 string into text. 
 3. Save the certificate  to a file. (You can use the Name that is provided or your own file name).
 4. Provide the path to the certificate to the driver or client.
 
 ### CLI plug-in support for the self-signed certificate
+{: #cli-plugin-support-ssc}
 
 You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the driver or client.
