@@ -5,7 +5,7 @@
 toc:
   properties:
     subcollection: databases-for-etcd
-    service-name: databases-for-etcd-group
+    service-name: databases-for-etcd
     version: 2
     category: database
     audience: service

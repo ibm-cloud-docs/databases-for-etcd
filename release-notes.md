@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-03-15"
+lastupdated: "2022-03-21"
 
-keywords: databases-for-etcd-group release notes
+keywords: databases-for-etcd release notes
 
 subcollection: databases-for-etcd
 
