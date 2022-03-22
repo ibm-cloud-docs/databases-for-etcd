@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
 keywords: databases-for-etcd release notes
 
@@ -25,3 +25,10 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-etcd_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 19 December 2018
+{: #databases-for-etcd-19dec2018}
+{: release-note}
+
+General Availability of {{site.data.keyword.databases-for-etcd}}
+:  {{site.data.keyword.databases-for-etcd}} added to the [IBM Cloud Databases](https://www.ibm.com/cloud/databases) family. See blog post announcement [here](https://www.ibm.com/cloud/blog/ibm-cloud-databases-for-etcd-elasticsearch-and-messages-for-rabbitmq-are-now-generally-available).
