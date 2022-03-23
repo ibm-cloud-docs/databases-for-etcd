@@ -26,13 +26,6 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-etcd_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
-## 19 December 2018
-{: #databases-for-etcd-19dec2018}
-{: release-note}
-
-General Availability of {{site.data.keyword.databases-for-etcd}}
-:  {{site.data.keyword.databases-for-etcd}} added to the [IBM Cloud Databases](https://www.ibm.com/cloud/databases) family. See blog post announcement [here](https://www.ibm.com/cloud/blog/ibm-cloud-databases-for-etcd-elasticsearch-and-messages-for-rabbitmq-are-now-generally-available).
-
 ## 13 April 2020
 {: #databases-for-etcd-13apr2020}
 {: release-note}
@@ -46,3 +39,10 @@ General Availability of {{site.data.keyword.databases-for-etcd}}
 
 New Regions Available for IBM Cloud Database Services
 :  {{site.data.keyword.databases-for-etcd_full}} is now available to be deployed in Seoul; South Korea; and Chennai, India. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/new-regions-available-for-ibm-cloud-database-services).
+
+## 19 December 2018
+{: #databases-for-etcd-19dec2018}
+{: release-note}
+
+General Availability of {{site.data.keyword.databases-for-etcd}}
+:  {{site.data.keyword.databases-for-etcd}} added to the [IBM Cloud Databases](https://www.ibm.com/cloud/databases) family. See blog post announcement [here](https://www.ibm.com/cloud/blog/ibm-cloud-databases-for-etcd-elasticsearch-and-messages-for-rabbitmq-are-now-generally-available).
