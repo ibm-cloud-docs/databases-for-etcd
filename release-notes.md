@@ -26,6 +26,13 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-etcd_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
+## 25 March 2022
+{: #databases-for-etcd-25mar2022}
+{: release-note}
+
+{{site.data.keyword.databases-for-etcd_full}} Security Goals Updated
+:  Available security and compliance goals updated. See updated goals [here](/docs/databases-for-redis?topic=databases-for-etcd-manage-security-compliance).
+
 ## 13 April 2020
 {: #databases-for-etcd-13apr2020}
 {: release-note}
