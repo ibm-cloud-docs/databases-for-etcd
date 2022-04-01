@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-03-23"
+lastupdated: "2022-04-01"
 
 keywords: databases-for-etcd release notes
 
@@ -32,6 +32,13 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 
 {{site.data.keyword.databases-for-etcd_full}} Security Goals Updated
 :  Available security and compliance goals updated. See updated goals [here](/docs/databases-for-redis?topic=databases-for-etcd-manage-security-compliance).
+
+## 30 June 2021
+{: #databases-for-etcd-30jun2021}
+{: release-note}
+
+General Availability of {{site.data.keyword.databases-for-etcd_full}} support for IBM Cloud Databases enabled by IBM Cloud Satellite.
+:  A distributed cloud provides consistent security and services across environments, centralized workload visibility, reduced latency, easier compliance and higher application development velocity. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/deploy-managed-cloud-native-databases-anywhere-with-ibm-cloud-satellite).
 
 ## 13 April 2020
 {: #databases-for-etcd-13apr2020}
