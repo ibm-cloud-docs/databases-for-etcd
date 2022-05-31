@@ -61,6 +61,8 @@ toc:
           label: Tutorials
           topics: 
           - /cloud-databases/cloud-databases-tutorial-getting-started
+          - /cloud-databases/cloud-databases-tutorial-provision-postgres-tf
+          - /cloud-databases/cloud-databases-tutorial-provision-mongodbee-tf
           - /cloud-databases/cloud-databases-tutorial-k8s-app
       - topicgroup: 
           label: Logging and monitoring
