@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-09-12"
+  years: 2018, 2022
+lastupdated: "2022-06-02"
 
-keywords: etcd
+keywords: etcd, etcd high availability
 
 subcollection: databases-for-etcd
 
@@ -24,16 +24,18 @@ subcollection: databases-for-etcd
 {{site.data.keyword.databases-for-etcd}} provides replication, fail-over, and high-availability features to protect your databases and data from infrastructure maintenance, upgrades, and failures. Deployments contain a cluster with three nodes. All three nodes store data and maintain cluster state with a quorum. The consensus algorithm monitors cluster health, triggers failovers if one member becomes unhealthy, and accepts a new or rejoining member. If one data member becomes unreachable, your cluster continues to operate normally. If there is permanent loss of a quorum, then the cluster is restarted and recovers to a previous state. 
 
 ## Application-level High-Availability
+{: #high-availability-app-level}
 
 Applications that communicate over networks and cloud services are subject to transient connection failures. You want to design your applications to retry connections when errors are caused by a temporary loss in connectivity to your deployment or to {{site.data.keyword.cloud_notm}}.
 
-Because {{site.data.keyword.databases-for-etcd}} is a managed service, regular updates and database maintenance occurs as part of normal operations. This can occasionally cause short intervals where your database is unavailable.
+Because {{site.data.keyword.databases-for-etcd}} is a managed service, regular updates and database maintenance occurs as part of normal operations. Maintenance can occasionally cause short intervals where your database is disabled.
 
 Your applications must be designed to handle temporary interruptions to the database, implement error handling for failed database commands, and implement retry logic to recover from a temporary interruption.
 
 Several minutes of database unavailability or connection interruptions are not expected. Open a [support ticket](https://cloud.ibm.com/unifiedsupport/cases/add) with details if you have time periods of no connectivity longer than a minute, so we can investigate.
 
 ## High availability, disaster recovery, and SLA resources
+{: #high-availability-da-sla}
 
 {{site.data.keyword.databases-for-etcd}} deployments conform to the {{site.data.keyword.cloud_notm}} Databases [HA, DR, and SLA](/docs/cloud-databases?topic=cloud-databases-ha-dr) information and terms.
 
