@@ -24,15 +24,15 @@ content-type: troubleshoot
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
 
-# Why can’t I connect to my Etcd deployment?
+# Why can’t I connect to my etcd deployment?
 {: #troubleshoot-connect}
 {: troubleshoot}
 {: support}
 
-If you encounter errors when connecting to your {{site.data.keyword.databases-for-etcd_full}} deployment, review these common causes and resolutions.
+If you encounter errors while connecting to your {{site.data.keyword.databases-for-etcd_full}} deployment, review these common causes and resolutions.
 {: shortdesc}
 
-You receive an error message or fail to connect to a {{site.data.keyword.databases-for-etcd}} deployment.  If reviewing application logs, you might see errors that mention intermittent connection timeouts or unable to connect.
+You receive an error message or fail to connect to a {{site.data.keyword.databases-for-etcd}} deployment. If reviewing application logs, you might see errors that mention intermittent connection timeouts or unable to connect.
 {: tsSymptoms}
 
 Review the following information to troubleshoot and resolve common connectivity problems:
