@@ -34,7 +34,7 @@ Review the [`Getting to production`](/docs/cloud-databases?topic=cloud-databases
 ## Connecting with `etcdctl`
 {: #connect-etcdctl}
 
-Download and install `etcdctl`, which you can get from [the coreos/etcd repository](https://github.com/coreos/etcd/releases/latest). Once it is installed, you can get the formatted connection strings from the deployment's _Dashboard Overview_, in the _Endpoints_ panel. The _CLI_ tab contains information that a CLI client uses to make a connection to your deployment.
+Download and install `etcdctl`, which you can get from [the etcd-io/etcd repository](https://github.com/etcd-io/etcd/releases/latest). Once it is installed, you can get the formatted connection strings from the deployment's _Dashboard Overview_, in the _Endpoints_ panel. The _CLI_ tab contains information that a CLI client uses to make a connection to your deployment.
 
 ![Endpoints panel](images/getting-started-endpoints-panel.png){: caption="Figure 1. Endpoints panel" caption-side="bottom"}
 
