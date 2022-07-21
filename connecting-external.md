@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2022-03-21"
+  years: 2018, 2022
+lastupdated: "2022-07-21"
 
-keywords: etcd, application
+keywords: etcd, etcdctl
 
 subcollection: databases-for-etcd
 
@@ -15,82 +15,70 @@ subcollection: databases-for-etcd
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:tip: .tip}
 
-# Connecting an external application
-{: #external-app}
 
-Each {{site.data.keyword.databases-for-etcd_full}} deployment has connection strings specifically for drivers and applications. Connection strings are displayed in the *Endpoints* panel of your deployment's *Overview*, and can also be retrieved from the [cloud databases CLI plugin](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+# Connecting with `etcdctl`
+{: #connecting-etcdctl}
 
-The connection strings can be used by any of the users on your deployment. While you can use the root user for all of your connections and applications, it might be better to generate users specifically for your applications to connect with. Documentation on creating users is on the [Creating Users and Getting Connection Strings](/docs/databases-for-etcd?topic=databases-for-etcd-connection-strings) page.
+You can access your etcd database directly from a command-line client, which allows for direct interaction with the data structures that are created within the database. It is also useful for administering and monitoring the keyspace and performance, making etcd transactions, managing leases, and other management activities.
 
-## Using Connection Information
-{: #using-conn-info}
-
-{{site.data.keyword.databases-for-etcd}} only supports the etcd v3 API and datastore. Access to the v2 API is disabled.
+{{site.data.keyword.databases-for-etcd}} only supports the etcd v3 API and datastore. Access to the v2 API is disabled. 
 {: .tip}
 
-The information an application needs to make a connection to your deployment is in the "etcd" section of your connection strings. The table contains a breakdown for reference.
+## Installing 
+{: #installing-etcdctl}
 
-Field Name|Index|Description
-----------|-----|-----------
-`Type`||Type of connection - for etcd, it is "uri"
-`Scheme`||Scheme for a URI - for etcd, it is "https"
-`Path`||Path for a uri
-`Authentication`|`Username`|The username that you use to connect.
-`Authentication`|`Password`|A password for the user - might be shown as `$PASSWORD`
-`Authentication`|`Method`|How authentication takes place; "direct" authentication is handled by the driver.
-`Hosts`|`0...`|A hostname and port to connect to
-`Composed`|`0...`|A URI combining Scheme, Authentication, Host, and Path
-`Certificate`|`Name`|The allocated name for the self-signed certificate for database deployment
-`Certificate`|Base64|A base64 encoded version of the certificate.
-{: caption="Table 1. etcd/URI connection information" caption-side="top"}
+The `etcdctl` binary is available in the etcd distribution, which can be downloaded from [the coreos/etcd repository](https://github.com/coreos/etcd/releases/latest).
+
+## Connecting
+{: #connection-strings-etcdctl}
+
+Connection strings are displayed in the _Endpoints_ panel of your deployment's _Overview_, and can also be retrieved from the [cloud databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+
+![CLI Endpoints page](images/cli-endpoints-pane.png){: caption="Figure 1. CLI Endpoints page" caption-side="bottom"}
+
+Any user on your deployment is able to connect by using `etcdctl`, but the [root user](/docs/databases-for-etcd?topic=databases-for-etcd-user-management#the-root-user) does have more permissions on the cluster.
+{: .tip}
+
+The information `etcdctl` needs to make a connection to your deployment is in the "cli" section of your [connection strings](/docs/databases-for-etcd?topic=databases-for-etcd-connection-strings). The table contains a breakdown for reference.
+
+| Field Name | Index | Description |
+| ---------- | ----- | ----------- |
+| `Bin` | | The recommended binary to create a connection; in this case it is `etcdctl`. |
+| `Composed` | | A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses  |`Arguments` as command-line parameters.
+| `Environment` | | A list of key or values you set as environment variables. |
+| `Arguments` | 0... | The information that is passed as arguments to the command shown in the Bin field. |
+| `Certificate` | Base64 | A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. |
+| `Certificate` | Name | The allocated name for the self-signed certificate. |
+| `Type` | | The type of package that uses this connection information; in this case `cli`.  |
+{: caption="Table 1. etcdctl/cli connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
-## Connecting with a Driver
-{: #connecting-with-driver}
+## `etcdctl` example
+{: #example-etcdctl}
 
-etcd drivers are often able to make a connection to your deployment when given the URI-formatted connection string found in the "composed" field of the connection information. For example, 
-```shell
-https://ibm_cloud_59699685_b95e_4afe_9d39_7464c228563c:$PASSWORD@ca537b4d-dcf2-467f-bd98-97535f11445b.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32218
+```sh
+ETCDCTL_API=3 etcdctl --endpoints=http://afe6f1d5-60d5-447e-a96a-66f555ecc277.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32207 --user=ibm_cloud_4417:32f81b04e1b756f34bda351d59c973 member list -w table
 ```
 
-The table covers a few of the etcd drivers in various languages.
+* `ETCDCTL_API=3` - Sets the API version environment variable for the `etcdctl` command. The binary for `etcdctl` uses version 2 by default, which is not supported on your deployment. Setting this environment variable overrides the default. If you are only using `etcdctl` to talk to etcd v3 deployments, you might want to set this variable more permanently in your shell environment.
+* `etcdctl` - The command itself. 
+* `--endpoints=...` - The parameter that specifies the endpoints where the `etcdctl` command connects. It is composed of HTTPS protocol URLs and includes a port number. 
+* `--user=...` - The parameter for the username and password, which is separated by a colon, to be used as credentials to log in to the etcd deployment. 
+* `member list` - An etcdctl command to list the database members of the etcd deployment. Without any other parameters, the result is produced as a list comma separated values.
+* `-w table` - A modifier for the output of `member list`, which reformats it as a table with headings.
 
-Language|Driver|Documentation
-----------|-----|-----------
-Node|`etcd3`|[Link](https://microsoft.github.io/etcd3/classes/etcd3.html)
-Java|`jetcd`|[Link](https://github.com/etcd-io/jetcd)
-Java|`etcd-java`|[Link](https://github.com/IBM/etcd-java)
-Go|`etcd/client`|[Link](https://github.com/etcd-io/etcd/tree/master/client)
-Python|`python-etcd`|[Link](https://python-etcd.readthedocs.io/en/latest/)
-{: caption="Table 2. Common etcd drivers" caption-side="top"}
+More example commands are in the [etcd documentation](https://etcd.io/docs/v3.4.0/dev-guide/interacting_v3/).
 
-## Connecting without a Driver
-{: #connecting-without-driver}
+## Starting `etcdctl` from the IBM Cloud CLI
+{: #starting-etcdctl-cli}
 
-For languages that do not have gRPC support etcd v3 provides a JSON gRPC gateway that translates HTTP/JSON requests into gRPC messages. For example, you can check the cluster health by using cURL.
-```shell
-curl https://35dae549-2275-4d3e-beed-d86f36022336.974550db55eb4ec0983f023940bf637f.databases.appdomain.cloud:32460/{version}/cluster/member/list --cacert c5f02736-d94c-11e8-a2e9-62ec2ed68f84 \
--X POST -d '{"name": "ibm_cloud_59699685_b95e_4afe_9d39_7464c228563c", "password": "$PASSWORD"}'
+If you have both `etcdctl` and the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) installed, the `ibmcloud cdb deployment-connections` command can handle creating the connection. For example, to connect to a deployment named "example-etcd" with an "example-user", use the following command.
+
+```sh
+ibmcloud cdb deployment-connections -u example-user example-etcd --start
 ```
 
-The `version` path parameter depends on the minor version of etcd running on your deployment. You can find the minor version on your [deployment's *Overview* page](/docs/databases-for-etcd?topic=databases-for-etcd-dashboard-overview). If you are running etcd 3.2, use `v3alpha` in the endpoint. If you are running etcd 3.3, use `v3beta` in the endpoint. Version information and example commands are in the [etcd documentation](https://etcd.io/docs/v3.4.0/dev-guide/api_grpc_gateway/). Refer to the [etcd Swagger API definitions](https://github.com/etcd-io/etcd/blob/master/Documentation/dev-guide/apispec/swagger/rpc.swagger.json) for a full reference. 
-
-## TLS and self-signed certificate support
-{: #tls-ssc-support}
-
-All connections to {{site.data.keyword.databases-for-etcd}} are TLS 1.2 enabled, so the method you use to connect needs to be able to support encryption. Your deployment also comes with a self-signed certificate to verify the server upon connection. 
-
-### Using the self-signed certificate
-{: #using-ssc}
-
-1. Copy the certificate information from the *Endpoints* panel or the Base64 field of the connection information. 
-2. If needed, decode the Base64 string into text. 
-3. Save the certificate  to a file. (You can use the Name that is provided or your own file name).
-4. Provide the path to the certificate to the driver or client.
-
-### CLI plug-in support for the self-signed certificate
-{: #cli-plugin-support-ssc}
-
-You can display the decoded certificate for your deployment with the CLI plug-in with the command `ibmcloud cdb deployment-cacert "your-service-name"`. It decodes the base64 into text. Copy and save the command's output to a file and provide the file's path to the driver or client.
+The command prompts for the user's password and then runs the `etcdctl` command-line client to connect to the database.
