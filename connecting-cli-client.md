@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2022-03-21"
+  years: 2018, 2022
+lastupdated: "2022-07-21"
 
 keywords: etcd, etcdctl
 
@@ -43,23 +43,23 @@ Any user on your deployment is able to connect by using `etcdctl`, but the [root
 
 The information `etcdctl` needs to make a connection to your deployment is in the "cli" section of your [connection strings](/docs/databases-for-etcd?topic=databases-for-etcd-connection-strings). The table contains a breakdown for reference.
 
-Field Name|Index|Description
-----------|-----|-----------
-`Bin`||The recommended binary to create a connection; in this case it is `etcdctl`.
-`Composed`||A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command-line parameters.
-`Environment`||A list of key or values you set as environment variables.
-`Arguments`|0...|The information that is passed as arguments to the command shown in the Bin field.
-`Certificate`|Base64|A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded.
-`Certificate`|Name|The allocated name for the self-signed certificate.
-`Type`||The type of package that uses this connection information; in this case `cli`. 
-{: caption="Table 2. `etcdctl`/`cli` connection information" caption-side="top"}
+| Field Name | Index | Description |
+| ---------- | ----- | ----------- |
+| `Bin` | | The recommended binary to create a connection; in this case it is `etcdctl`. |
+| `Composed` | | A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses  |`Arguments` as command-line parameters.
+| `Environment` | | A list of key or values you set as environment variables. |
+| `Arguments` | 0... | The information that is passed as arguments to the command shown in the Bin field. |
+| `Certificate` | Base64 | A self-signed certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. |
+| `Certificate` | Name | The allocated name for the self-signed certificate. |
+| `Type` | | The type of package that uses this connection information; in this case `cli`.  |
+{: caption="Table 1. etcdctl/cli connection information" caption-side="top"}
 
 * `0...` indicates that there might be one or more of these entries in an array.
 
 ## `etcdctl` example
 {: #example-etcdctl}
 
-```shell
+```sh
 ETCDCTL_API=3 etcdctl --endpoints=http://afe6f1d5-60d5-447e-a96a-66f555ecc277.8f7bfd8f3faa4218aec56e069eb46187.databases.appdomain.cloud:32207 --user=ibm_cloud_4417:32f81b04e1b756f34bda351d59c973 member list -w table
 ```
 
@@ -77,7 +77,7 @@ More example commands are in the [etcd documentation](https://etcd.io/docs/v3.4.
 
 If you have both `etcdctl` and the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference) installed, the `ibmcloud cdb deployment-connections` command can handle creating the connection. For example, to connect to a deployment named "example-etcd" with an "example-user", use the following command.
 
-```shell
+```sh
 ibmcloud cdb deployment-connections -u example-user example-etcd --start
 ```
 
