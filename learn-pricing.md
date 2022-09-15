@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-02"
+lastupdated: "2022-07-15"
 
 keywords: etcd, databases, pricing, resources, scaling, etcd pricing
 
@@ -62,9 +62,17 @@ For pricing estimation, use the **Add to Estimate** button at the bottom of the 
 ![Pricing calculator estimation with 20 GB of disk and 1 GB of RAM, per member](images/pricing-calc.png){: caption="Figure 1. Pricing calculator estimation with 20 GB of disk and 1 GB of RAM, per member" caption-side="bottom"}
 
 ## Backups Pricing
-{: #backups-pricing}
+{: #pricing-backup}
 
-Users also receive their total disk space purchased, per database, in free backup storage. For example, in a month, if you have a {{site.data.keyword.databases-for-etcd}} deployment that has provisioned 20 GB of disk per member, which has three data members, you receive 60 GB of backup storage free for that month. If your backup storage utilization is greater than 60 GB for the month in this scenario, each gigabyte is charged at an overage $0.03/month. Most deployments do not go over the allotted credit.
+You receive your total disk space purchased, per database, in free backup storage. For example, in a given month, if you have a {{site.data.keyword.databases-for-etcd}} deployment that has 20 GB of disk per member, and has three data members, you receive 60 GB of backup storage free for that month. If your backup storage utilization is greater than 60 GB for the month (in this scenario), you are charged an overage of $0.03/month per gigabyte. 
+
+By default, {{site.data.keyword.databases-for}} provides a daily backup that is stored for 30 days. These backups, and any on-demand backups you make, all count toward the above allocation.
+
+In the above example, if your database contains 2 GB of data and you have not taken any on-demand backups, then your total backup size is 2 GB x 30 = 60 GB. Your backup costs are nil.
+
+If your database contains 15 GB of data and you have not taken any on-demand backups, then your total backup size is 15 GB x 30 = 450 GB. In this scenario, your backup costs are (450 GB - 60 GB) * 0.03 = $11.7 per month.
+
+Most deployments will not ever go over the allotted credit.
 
 ## Dedicated Cores Pricing
 {: #dedicated-cores-pricing}
