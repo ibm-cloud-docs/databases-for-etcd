@@ -32,6 +32,7 @@ toc:
       id: howto
       topics:
       - /cloud-databases/cloud-databases-provisioning
+      - /cloud-databases/cloud-databases-cbr
       - topicgroup: 
           label: IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
           topics:
