@@ -21,7 +21,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: shortdesc}
 
 ## 11 October 2022
-{: #databases-for-cassandra-11oct2022}
+{: #databases-for-etcd-11oct2022}
 {: release-note}
 
 Protecting {{site.data.keyword.databases-for-etcd_full}} resources with context-based restrictions
