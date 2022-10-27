@@ -75,7 +75,10 @@ toc:
       - topicgroup: 
           label: Enhancing security
           topics: 
+          - /cloud-databases/cloud-databases-manage-security-compliance
           - learn-security-compliance.md
+          - /cloud-databases/cloud-databases-cbr
+          - /cloud-databases/cloud-databases-cbr-tutorial
           - manage-scc.md
   - navgroup: 
       id: help
