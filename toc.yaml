@@ -87,7 +87,7 @@ toc:
       - link:
           label: Cloud Databases API
           href: https://cloud.ibm.com/apidocs/cloud-databases-api
-      - /cloud-databases/cloud-databases-versioning-policy
+      - include: ../cloud-databases/db-version-policy.md
       - topicgroup: 
           label: Connecting over Private Networks
           topics: 
