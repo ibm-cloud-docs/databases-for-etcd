@@ -1,0 +1,53 @@
+{
+  "title": "IBM Cloud® Databases for etcd docs",
+  "lastupdated": "2023-02-21",
+  "introduction": "etcd is a distributed, reliable key-value store for the most critical data of a distributed system.",
+  "section_devtools": {
+    "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
+    "cli": "/docs/databases-cli-plugin", 
+    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
+  },
+  "section_recommended": [
+    {
+      "title": "Getting Started",
+      "description": "A brief tutorial to introduce using an IBM Cloud® Databases for etcd deployment.",
+      "href": "/docs/databases-for-etcd?topic=databases-for-etcd-getting-started"
+    },
+    {
+      "title": "Setting the Root Password",
+      "description": "The Databases for etcd service is provisioned with a root user. You must set the root password before you use it to connect.",
+      "href": "/docs/databases-for-etcd?topic=databases-for-etcd-root-password"
+    },
+    {
+      "title": "Creating Users and Getting Connection Strings",
+      "description": "To connect to IBM Cloud® Databases for etcd, you need some users and connection strings. Connection Strings for your deployment are displayed on the Dashboard Overview, in the Endpoints panel. These strings can be used with any set of credentials that you generate.",
+      "href": "/docs/databases-for-etcd?topic=databases-for-etcd-connection-strings&interface=ui"
+    }
+  ],
+  "section_learn": {
+    "developer": "https://developer.ibm.com/depmodels/cloud/",
+    "architecture": "https://www.ibm.com/cloud/architecture",
+    "training": "https://www.ibm.com/training/cloud",
+    "community": "https://community.ibm.com/community/user/publiccloud/home"
+  },
+  "section_updates": {
+    "view_more": "/docs/acme-test?topic=acme-test-release-notes",
+    "tiles": [
+      {
+        "date": "19 October 2022",
+        "title": "Deploying and Connecting an IBM Cloud® Databases Instance Tutorial",
+        "description": "This tutorial guides you through the process of deploying a Cloud Databases instance and connecting it to a web front end by creating a webpage that allows visitors to input a word and its definition. These values are then stored in a database running on Cloud Databases. You install the database infrastructure by using Terraform and your web application uses the popular Express framework. The application can then be run locally, or by using Docker."
+      },
+      {
+        "date": "11 October 2022",
+        "title": "Protecting IBM Cloud® Databases for etcd resources with context-based restrictions",
+        "description": "Context-based restrictions (CBR) give account owners and administrators the ability to define and enforce access restrictions for IBM Cloud® resources based on the context of access requests. Access to Cloud Databases resources can be controlled with CBR and identity and access management (IAM) policies."
+      },
+      {
+        "date": "25 March 2022",
+        "title": "IBM Cloud® Databases for etcd Security Goals Updated",
+        "description": "Available security and compliance goals updated."
+      }
+    ]
+  }
+}
