@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-06-02"
+  years: 2020, 2023
+lastupdated: "2023-04-17"
 
 keywords: etcd, monitoring, metrics, iops, disk usage, memory usage, etcd monitoring
 
@@ -9,13 +9,7 @@ subcollection: databases-for-etcd
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 # Monitoring Integration
 {: #monitoring}
@@ -35,7 +29,7 @@ To access your deployment's monitoring dashboard from {{site.data.keyword.monito
 
 {{site.data.keyword.monitoringfull_notm}} is available for deployments in every region. Deployments in Multi-zone Regions (MZRs) - `eu-gb`, `eu-de`, `us-east`, `us-south`, `jp-tok`, `au-syd` - have their metrics in the corresponding region.
 
-If you have deployments that are in a Single-zone Region (SZR) - `che01`, or `seo01` - then your logs are forwarded to a monitoring instance in another region. You need to provision {{site.data.keyword.monitoringfull_notm}} instances in the region where your metrics are forwarded to. Metrics for deployments in `seo01` and `che01` go to `jp-tok`. 
+If you have deployments that are in Single-zone Region (SZR) `che01` then your logs are forwarded to a monitoring instance in another region. You need to provision {{site.data.keyword.monitoringfull_notm}} instances in the region where your metrics are forwarded to. Metrics for deployments in `che01` go to `jp-tok`.
 
 ## Available Metrics
 {: #metrics-by-plan}
