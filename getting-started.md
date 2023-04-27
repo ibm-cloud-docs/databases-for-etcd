@@ -1,19 +1,13 @@
 ---
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-06-01"
+  years: 2019, 2023
+lastupdated: "2023-04-27"
 
 subcollection: databases-for-etcd
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: .external target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting Started Tutorial
 {: #getting-started}
