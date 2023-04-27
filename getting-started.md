@@ -5,12 +5,18 @@ lastupdated: "2023-04-27"
 
 subcollection: databases-for-etcd
 
+content-type: tutorial
+account-plan: paid
+completion-time: 30m
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Getting Started Tutorial
+# Getting Started
 {: #getting-started}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="30m"}
 
 This tutorial is a short introduction to using an {{site.data.keyword.databases-for-etcd_full}} deployment.
 
@@ -18,17 +24,15 @@ This tutorial is a short introduction to using an {{site.data.keyword.databases-
 {: #before-begin}
 
 - You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: .external}.
-
-- And a {{site.data.keyword.databases-for-etcd}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/databases-for-etcd). Give your deployment a memorable name that appears in your account's Resource List.
-
+- You also need a {{site.data.keyword.databases-for-etcd}} deployment. You can provision one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/databases-for-etcd). Give your deployment a memorable name that appears in your account's Resource List.
 - [Set the Root Password](/docs/databases-for-etcd?topic=databases-for-etcd-root-password) for your deployment.
+- Review the [`Getting to production`](/docs/cloud-databases?topic=cloud-databases-best-practices) documentation for general guidance on setting up a basic {{site.data.keyword.databases-for-etcd_full}} deployment.
 
-Review the [`Getting to production`](/docs/cloud-databases?topic=cloud-databases-best-practices) documentation for general guidance on setting up a basic {{site.data.keyword.databases-for-etcd_full}} deployment.
-
-## Connecting with `etcdctl`
+## Connect with `etcdctl`
 {: #connect-etcdctl}
+{: step}
 
-Download and install `etcdctl`, which you can get from [the coreos/etcd repository](https://github.com/coreos/etcd/releases/latest). Once it is installed, you can get the formatted connection strings from the deployment's _Dashboard Overview_, in the _Endpoints_ panel. The _CLI_ tab contains information that a CLI client uses to make a connection to your deployment.
+Download and install `etcdctl`, from the [the coreos/etcd repository](https://github.com/coreos/etcd/releases/latest). Once it is installed, get the formatted connection strings from your deployment's _Dashboard Overview_, in _Endpoints_. The _CLI_ tab contains information that a CLI client uses to make a connection to your deployment.
 
 ![Endpoints panel](images/getting-started-endpoints-panel.png){: caption="Figure 1. Endpoints panel" caption-side="bottom"}
 
@@ -42,7 +46,7 @@ export ETCDCTL_ENDPOINTS=https://156ed317-3aea-4732-a8fd-349c2bb9d39c.bkvfu0nd0m
 export ETCDCTL_USER=root:password
 ```
 
-You should now be able to use `etcdctl` to issue commands to your deployment.
+You should now be able to use `etcdctl` to issue commands to your deployment, for example: 
 ```sh
 $ etcdctl put foo bar
 OK
@@ -51,12 +55,13 @@ foo
 bar
 ```
 
-## Using etcd
+## Use etcd
 {: #using-etcd}
+{: step}
 
 A good way to get familiar with etcd is to play around with some of its features. This tutorial has a few quick examples on prefixes, transactions, leases, and watchers.
 
-Expanded examples and more features can be found in the [etcd demo](https://etcd.io/docs/v3.3.12/demo/), and more general information on using etcd is in [Interacting with etcd](https://etcd.io/docs/v3.3.12/dev-guide/interacting_v3/).
+Expanded examples and features can be found in the [etcd demo](https://etcd.io/docs/v3.3.12/demo/), and more general information on using etcd is in [Interacting with etcd](https://etcd.io/docs/v3.3.12/dev-guide/interacting_v3/).
 
 ### Prefixes
 {: #prefixes}
@@ -186,10 +191,6 @@ The connection is left open, and continues to watch that key for subsequent chan
 
 If you are just using etcd for the first time, it is a good idea to take a tour through the [etcd documentation](https://etcd.io/docs/v3.3.12/). 
 
-If you are planning to use {{site.data.keyword.databases-for-etcd}} for your applications, check out some of our other documentation pages.
-- [Connecting an external application](/docs/databases-for-etcd?topic=databases-for-etcd-external-app)
-- [Connecting an IBM Cloud application](/docs/databases-for-etcd?topic=databases-for-etcd-ibmcloud-app)
+If you are planning to use {{site.data.keyword.databases-for-etcd}} for your applications, check out [Connecting an external application](/docs/databases-for-etcd?topic=databases-for-etcd-external-app) and [Connecting an IBM Cloud application](/docs/databases-for-etcd?topic=databases-for-etcd-ibmcloud-app).
 
-Also, to ensure the stability of your applications and your database, check out the pages on 
-- [High-Availability](/docs/databases-for-etcd?topic=databases-for-etcd-high-availability)
-- [Performance](/docs/databases-for-etcd?topic=databases-for-etcd-performance)
+To ensure the stability of your applications and your database, check out [High-Availability](/docs/databases-for-etcd?topic=databases-for-etcd-high-availability) and [Performance](/docs/databases-for-etcd?topic=databases-for-etcd-performance).
