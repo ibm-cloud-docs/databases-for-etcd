@@ -1,6 +1,6 @@
 {
   "title": "IBM Cloud® Databases for etcd docs",
-  "lastupdated": "2023-03-03",
+  "lastupdated": "2023-08-01",
   "introduction": "etcd is a distributed, reliable key-value store for the most critical data of a distributed system.",
   "section_devtools": {
     "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
@@ -14,9 +14,9 @@
       "href": "/docs/databases-for-etcd?topic=databases-for-etcd-getting-started"
     },
     {
-      "title": "Setting the Root Password",
-      "description": "The Databases for etcd service is provisioned with a root user. You must set the root password before you use it to connect.",
-      "href": "/docs/databases-for-etcd?topic=databases-for-etcd-root-password"
+      "title": "Setting the Admin Password",
+      "description": "The Databases for etcd service is provisioned with an admin user. You must set the password before you use it to connect.",
+      "href": "/docs/databases-for-etcd?topic=databases-for-etcd-user-management&interface=ui#user-management-set-admin-password-ui"
     },
     {
       "title": "Creating Users and Getting Connection Strings",
