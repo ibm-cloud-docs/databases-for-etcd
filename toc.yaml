@@ -52,6 +52,7 @@ toc:
           topics: 
           - howto-resources-scaling.md
           - howto-autoscaling.md
+          - howto-upgrade.md
       - include: ../cloud-databases/howto-manage-backups.md
       - include: ../cloud-databases/howto-allowlists.md
       - topicgroup: 
