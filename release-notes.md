@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-05-23"
+lastupdated: "2023-09-12"
 
 keywords: databases-for-etcd release notes
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-etcd_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 12 September 2023
+{: #databases-for-etcd-12sept2023}
+{: release-note}
+
+Upgrading to a new Major Version
+:  Documentation on [Upgrading to a new Major Version](https://cloud.ibm.com/docs/databases-for-etcd?topic=databases-for-etcd-etcd-upgrading) published.
 
 ## 23 May 2023
 {: #databases-for-etcd-23may2023}
