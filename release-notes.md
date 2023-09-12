@@ -59,7 +59,7 @@ Protecting {{site.data.keyword.databases-for-etcd_full}} resources with context-
 {: #databases-for-etcd-30jun2021}
 {: release-note}
 
-General Availability of {{site.data.keyword.databases-for-etcd_full}} support for IBM Cloud Databases enabled by IBM Cloud Satellite.
+General Availability of {{site.data.keyword.databases-for-etcd_full}} support for IBM {{site.data.keyword.databases-for}} enabled by {{site.data.keyword.satellitelong}}.
 :  A distributed cloud provides consistent security and services across environments, centralized workload visibility, reduced latency, easier compliance and higher application development velocity. See blog post announcement [here](https://www.ibm.com/cloud/blog/announcements/deploy-managed-cloud-native-databases-anywhere-with-ibm-cloud-satellite).
 
 ## 13 April 2020
