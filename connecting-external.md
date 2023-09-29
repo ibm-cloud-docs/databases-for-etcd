@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-11-03"
+  years: 2018, 2023
+lastupdated: "2023-09-29"
 
 keywords: etcd, application
 
@@ -10,18 +10,14 @@ subcollection: databases-for-etcd
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Connecting an external application
 {: #external-app}
 
-Each {{site.data.keyword.databases-for-etcd_full}} deployment has connection strings specifically for drivers and applications. Connection strings are displayed within *Endpoints* in your deployment's *Overview*, and can also be retrieved from the [cloud databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
+Each {{site.data.keyword.databases-for-etcd_full}} deployment has connection strings specifically for drivers and applications. Connection strings are displayed within *Endpoints* in your deployment's *Overview*, and can also be retrieved from the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [{{site.data.keyword.databases-for}} API](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026).
 
-The connection strings can be used by any of the users on your deployment. While you can use the root user for all of your connections and applications, it might be better to generate users specifically for your applications to connect with. Documentation on creating users is on the [Creating Users and Getting Connection Strings](/docs/databases-for-etcd?topic=databases-for-etcd-connection-strings) page.
+The connection strings can be used by any of the users on your deployment. While you can use the root user for all of your connections and applications, it might be better to generate users specifically for your applications to connect with. For more information, see [Creating Users and Getting Connection Strings](/docs/databases-for-etcd?topic=databases-for-etcd-connection-strings).
 
 ## Using Connection Information
 {: #using-conn-info}
@@ -80,7 +76,9 @@ The `version` path parameter depends on the minor version of etcd running on you
 ## TLS and self-signed certificate support
 {: #tls-ssc-support}
 
-All connections to {{site.data.keyword.databases-for-etcd}} are TLS 1.2 enabled, so the method you use to connect needs to be able to support encryption. Your deployment also comes with a self-signed certificate to verify the server upon connection. 
+All connections to {{site.data.keyword.databases-for-etcd}} are TLS 1.2 enabled, so the method you use to connect needs to be able to support encryption. Your deployment also comes with a self-signed certificate to verify the server upon connection.
+
+For more information, see [{{site.data.keyword.databases-for}} Certificates FAQ](/docs/databases-for-etcd?topic=databases-for-etcd-external-app){: external}.
 
 ### Using the self-signed certificate
 {: #using-ssc}
