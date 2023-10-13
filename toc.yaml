@@ -15,6 +15,9 @@ toc:
   - navgroup: 
       id: learn
       topics:
+      - link:
+          label: IBM Cloud Databases
+          href: https://cloud.ibm.com/docs/cloud-databases
       - getting-started.md
       - include: ../cloud-databases/learn-getting-to-production.md
       - link:
