@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-11-02"
 
 keywords: etcd, etcd manage users
 
@@ -31,7 +31,7 @@ Set the admin password before using it to connect.
 {: #user-management-set-admin-password-ui}
 {: ui}
 
-To set the password through the {{site.data.keyword.cloud_notm}} dashboard, select __Manage** from the service dashboard. Open the _Settings_ tab, and use _Change Database Admin Password_ to set a new admin password.
+Set your Admin Password through the UI by selecting your instance from the Resource List in the [{{site.data.keyword.cloud_notm}} Dashboard](https://cloud.ibm.com/){: external}. Then, select **Settings**. Next, select *Change Database Admin Password*.
 
 ### Setting the Admin Password in the CLI
 {: #user-management-set-admin-password-cli}
