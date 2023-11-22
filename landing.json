@@ -1,10 +1,10 @@
 {
   "title": "IBM Cloud® Databases for etcd docs",
-  "lastupdated": "2023-08-01",
+  "lastupdated": "2023-11-22",
   "introduction": "etcd is a distributed, reliable key-value store for the most critical data of a distributed system.",
   "section_devtools": {
-    "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
-    "cli": "/docs/databases-cli-plugin", 
+    "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction",
+    "cli": "/docs/databases-cli-plugin",
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
   },
   "section_recommended": [
@@ -34,19 +34,19 @@
     "view_more": "/docs/databases-for-etcd?topic=databases-for-etcd-etcd-relnotes",
     "tiles": [
       {
+        "date": "22 November 2023",
+        "title": "Monitoring Integreation documentation updated",
+        "description": "Monitoring Integration documentation now lists metrics for all Cloud Databases services."
+      },
+      {
+        "date": "12 September 2023",
+        "title": "Upgrading to a new Major Version",
+        "description": "Documentation on Upgrading to a new Major Version published."
+      },
+      {
         "date": "19 October 2022",
-        "title": "Deploying and Connecting an IBM Cloud® Databases Instance Tutorial",
-        "description": "This tutorial guides you through the process of deploying a Cloud Databases instance and connecting it to a web front end by creating a webpage that allows visitors to input a word and its definition. These values are then stored in a database running on Cloud Databases. You install the database infrastructure by using Terraform and your web application uses the popular Express framework. The application can then be run locally, or by using Docker."
-      },
-      {
-        "date": "11 October 2022",
-        "title": "Protecting IBM Cloud® Databases for etcd resources with context-based restrictions",
-        "description": "Context-based restrictions (CBR) give account owners and administrators the ability to define and enforce access restrictions for IBM Cloud® resources based on the context of access requests. Access to Cloud Databases resources can be controlled with CBR and identity and access management (IAM) policies."
-      },
-      {
-        "date": "25 March 2022",
-        "title": "IBM Cloud® Databases for etcd Security Goals Updated",
-        "description": "Available security and compliance goals updated."
+        "title": "Deploying and Connecting a Cloud Databases Instance Tutorial",
+        "description": "This tutorial guides you through the process of deploying a Cloud Databases instance and connecting it to a web front end by creating a webpage that allows visitors to input a word and its definition. These values are then stored in a database running on Cloud Databases. You install the database infrastructure by using Terraform and your web application uses the popular Express framework. The application can then be run locally, or by using Docker. For more information, see Deploying and Connecting a Cloud Databases Instance."
       }
     ]
   }
