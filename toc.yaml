@@ -11,8 +11,8 @@ toc:
     product-page: https://www.ibm.com/cloud/databases-for-etcd
     path: databases-for-etcd
     label: Databases For etcd
-  entries: 
-  - navgroup: 
+  entries:
+  - navgroup:
       id: learn
       topics:
       - link:
@@ -28,13 +28,13 @@ toc:
       - learn-performance.md
       - learn-pricing.md
       - release-notes.md
-  - navgroup: 
+  - navgroup:
       id: howto
       topics:
       - howto-provisioning.md
       - howto-user-management.md
       - include: ../cloud-databases/howto-deprovisioning.md
-      - topicgroup: 
+      - topicgroup:
           label: IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
           topics:
           - include: ../cloud-databases/howto-sat-loc.md
@@ -44,23 +44,23 @@ toc:
       - howto-getting-connection-strings.md
       - include: ../cloud-databases/closures.md
       - include: ../cloud-databases/ha-dr.md
-      - topicgroup: 
+      - topicgroup:
           label: Connecting to Databases for etcd
-          topics: 
+          topics:
           - connecting-ibmcloud-app.md
           - connecting-external.md
           - connecting-cli-client.md
-      - topicgroup: 
+      - topicgroup:
           label: Managing Resources
-          topics: 
+          topics:
           - howto-resources-scaling.md
           - howto-autoscaling.md
           - howto-upgrade.md
       - include: ../cloud-databases/howto-manage-backups.md
       - include: ../cloud-databases/howto-allowlists.md
-      - topicgroup: 
+      - topicgroup:
           label: Tutorials
-          topics: 
+          topics:
           - include: ../cloud-databases/howto-tutorials.md
           - include: ../cloud-databases/hello-world-tutorial.md
           - include: ../cloud-databases/terra-postgres-tutorial.md
@@ -68,21 +68,23 @@ toc:
           - include: ../cloud-databases/k8-tutorial.md
           - include: ../cloud-databases/truck-tracker-tutorial.md
           - include: ../cloud-databases/disk-util-alerts-tutorial.md
-      - topicgroup: 
+      - topicgroup:
           label: Logging and monitoring
-          topics: 
+          topics:
           - include: ../cloud-databases/reference-activity-tracker.md
           - include: ../cloud-databases/reference-logging.md
-          - reference-monitoring.md
+          - link:
+              label: Monitoring Integration
+              href: https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-monitoring
           - include: ../cloud-databases/reference-sysdig.md
-      - topicgroup: 
+      - topicgroup:
           label: Enhancing security
-          topics: 
+          topics:
           - include: ../cloud-databases/manage-scc.md
           - learn-security-compliance.md
           - include: ../cloud-databases/howto-cbr.md
           - include: ../cloud-databases/cbr-tutorial.md
-  - navgroup: 
+  - navgroup:
       id: reference
       topics:
       - link:
@@ -94,9 +96,9 @@ toc:
       - link:
           label: Cloud Databases API
           href: https://cloud.ibm.com/apidocs/cloud-databases-api
-      - topicgroup: 
+      - topicgroup:
           label: Connecting over Private Networks
-          topics: 
+          topics:
           - include: ../cloud-databases/howto-vpes.md
           - include: ../cloud-databases/reference-service-endpoints.md
       - include: ../cloud-databases/reference-key-protect.md
