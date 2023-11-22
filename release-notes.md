@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-12"
+lastupdated: "2023-11-22"
 
 keywords: databases-for-etcd release notes
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-etcd_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 22 November 2023
+{: #databases-for-etcd-22nov2023}
+{: release-note}
+
+Monitoring Integreation documentation updated
+:  Monitoring Integration documentation now lists metrics for all {{site.data.keyword.databases-for}} services. For more information, see [Monitoring Integration](/docs/cloud-databases?topic=cloud-databases-monitoring){: external}.
 
 ## 12 September 2023
 {: #databases-for-etcd-12sept2023}
