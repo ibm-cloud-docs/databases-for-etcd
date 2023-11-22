@@ -54,7 +54,7 @@ You can manage your {{site.data.keyword.databases-for-etcd}} service through the
 ## Resources
 {: #dashboard-overview-resources}
 
-The resources tab contains information and configuration options on the size and resource usage of your deployment. You can 
+The resources tab contains information and configuration options on the size and resource usage of your deployment. You can
 - [Scale disk, memory, and CPU](/docs/databases-for-etcd?topic=databases-for-etcd-resources-scaling)
 - [Configure Autoscaling](/docs/databases-for-etcd?topic=databases-for-etcd-autoscaling)
 
@@ -66,15 +66,15 @@ The _Backups_ tab is the UI for managing your deployments backups. All of the av
 ## Observability
 {: #dashboard-overview-resources-observability}
 
-The _Observability_ tab provides access to the IBM Cloud Monitoring, logging, and event tracking integrations available for your deployment. 
+The _Observability_ tab provides access to the IBM Cloud Monitoring, logging, and event tracking integrations available for your deployment.
 - [{{site.data.keyword.at_full}}](/docs/databases-for-etcd?topic=cloud-databases-activity-tracker)
 - [{{site.data.keyword.la_full}}](/docs/databases-for-etcd?topic=cloud-databases-logging)
-- [{{site.data.keyword.monitoringfull}}](/docs/databases-for-etcd?topic=databases-for-etcd-monitoring)
+- [{{site.data.keyword.monitoringfull}}](/docs/cloud-databases?topic=cloud-databases-monitoring)
 
 ## Settings
 {: #dashboard-overview-resources-settings}
 
-The _Settings_ tab contains the UI for many of the tunable settings for your deployment. You can 
+The _Settings_ tab contains the UI for many of the tunable settings for your deployment. You can
 - view encryption details. Encryption at rest is enabled for all {{site.data.keyword.databases-for-etcd}} deployments. If you brought your own encryption key from [Key Protect](/docs/databases-for-etcd?topic=cloud-databases-key-protect), the panel provides a link to your Key Protect instance and the _Encryption Key_ field has the name of the key.
 - [Change the admin password](/docs/databases-for-etcd?topic=databases-for-etcd-user-management&interface=ui#user-management-set-admin-password-ui)
 - [Implement or modify an IP allowlist](/docs/databases-for-etcd?topic=cloud-databases-allowlisting)
