@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-01"
+lastupdated: "2024-05-03"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision etcd
 
@@ -37,7 +37,7 @@ Provision from the console by specifying the following parameters:
 
 - **Isolated:** Secure single-tenant offering for complex, highly-performant enterprise workloads.
 - **Shared:** Flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.<br>
-For more information, see [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-types).
+For more information, see [Hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-models).
 
 ### Resource allocation
 {: #resource_allocation}
@@ -394,4 +394,3 @@ The `host_flavor` parameter defines your Isolated Compute sizing. Input the appr
 
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
-
